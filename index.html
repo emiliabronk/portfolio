@@ -9,24 +9,37 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #fffceb;
+      color: #2e2e2e;
       line-height: 1.6;
     }
     header {
-      background-color: #d8e2dc;
-      padding: 30px 20px;
+      background-color: #dbead5;
+      padding: 40px 20px 20px;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .headshot {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
     }
     h1 {
-      margin: 0;
+      margin: 60px 0 10px;
       font-size: 2.5rem;
     }
     p.subtitle {
-      margin-top: 10px;
+      margin-top: 5px;
       font-size: 1.1rem;
-      color: #555;
+      color: #4b614c;
     }
     main {
       max-width: 700px;
@@ -39,13 +52,13 @@
     h2 {
       font-size: 1.8rem;
       margin-bottom: 10px;
-      color: #222;
+      color: #2e4f2e;
     }
     ul {
       padding-left: 20px;
     }
     li a {
-      color: #0077cc;
+      color: #336633;
       text-decoration: none;
     }
     li a:hover {
@@ -67,13 +80,14 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #e8e8e8;
+      background-color: #e9f0e6;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="headshot.jpg" alt="Emilia Bronk Headshot" class="headshot">
     <h1>Emilia Bronk</h1>
     <p class="subtitle">PPE student at Penn | Environmental & Policy Writer</p>
   </header>
@@ -102,14 +116,14 @@
     <section id="comedy">
       <h2>Comedy & Performance</h2>
       <ul>
-        <li><a href="https://youtu.be/8D6qcEZ8xYs?si=GEzwFjNPkHHeXRmE" target="_blank">Youtube "Dont Stop Penn Now Performed by Me "</a></li>
-        <li><a href="https://youtu.be/mOp9dvY1aw0?si=JimZfu8uNhtTus5c" target="_blank">YouTube "Bobby" Written by Me, C.H. Henry and Kyle Grgecic</a></li>
+        <li><a href="https://drive.google.com/your-sketch-link" target="_blank">Sketch Comedy Clip – Drive Link</a></li>
+        <li><a href="https://www.youtube.com/watch?v=yourvideoid" target="_blank">YouTube Set – Simply Chaos</a></li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>Contact: <a href="mailto:emiliabronk@gmail.com">miliabronk@gmail.com</a> | GitHub: <a href="https://github.com/emiliabronk" target="_blank">@emiliabronk</a></p>
+    <p>Contact: <a href="mailto:emilia@example.com">emilia@example.com</a> | GitHub: <a href="https://github.com/emiliabronk" target="_blank">@emiliabronk</a></p>
   </footer>
 </body>
 </html>
