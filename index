@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emilia Bronk | Portfolio</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f7f1;
+      --surface: #fffef9;
+      --text: #173d52;
+      --muted: #527184;
+      --heading: #0d496c;
+      --accent: #0d5278;
+      --accent-light: #e6f0f3;
+      --border: #c7d5d9;
+      --shadow: 0 4px 0 rgba(13,73,108,0.07);
+      --radius: 2px;
+      --max-width: 1320px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'EB Garamond', Georgia, serif;
+      
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='190' viewBox='0 0 250 190'%3E%3Cg stroke='%230d5278' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(18 23) rotate(-13 31 12)' fill='%230d5278' fill-opacity='.09' stroke-opacity='.32'%3E%3Cpath d='M7 12 Q25 -1 51 12 Q28 25 7 12Z'/%3E%3Cpath d='M8 12 L0 4 L1 20Z'/%3E%3Cpath d='M19 7 Q23 12 19 17 M26 5 Q30 12 26 19 M33 5 Q37 12 33 19 M40 8 Q43 12 40 16' fill='none'/%3E%3Cpath d='M25 5 L29 0 L33 5 M32 19 L36 24 L40 18' fill='none'/%3E%3Ccircle cx='44' cy='10' r='1.5' fill='%230d5278'/%3E%3C/g%3E%3Cg transform='translate(145 45) rotate(17 31 12)' fill='%230d5278' fill-opacity='.08' stroke-opacity='.3'%3E%3Cpath d='M7 12 Q25 -1 51 12 Q28 25 7 12Z'/%3E%3Cpath d='M8 12 L0 4 L1 20Z'/%3E%3Cpath d='M19 7 Q23 12 19 17 M26 5 Q30 12 26 19 M33 5 Q37 12 33 19 M40 8 Q43 12 40 16' fill='none'/%3E%3Cpath d='M25 5 L29 0 L33 5 M32 19 L36 24 L40 18' fill='none'/%3E%3Ccircle cx='44' cy='10' r='1.5' fill='%230d5278'/%3E%3C/g%3E%3Cg transform='translate(63 132) rotate(7 31 12)' fill='%230d5278' fill-opacity='.08' stroke-opacity='.3'%3E%3Cpath d='M7 12 Q25 -1 51 12 Q28 25 7 12Z'/%3E%3Cpath d='M8 12 L0 4 L1 20Z'/%3E%3Cpath d='M19 7 Q23 12 19 17 M26 5 Q30 12 26 19 M33 5 Q37 12 33 19 M40 8 Q43 12 40 16' fill='none'/%3E%3Cpath d='M25 5 L29 0 L33 5 M32 19 L36 24 L40 18' fill='none'/%3E%3Ccircle cx='44' cy='10' r='1.5' fill='%230d5278'/%3E%3C/g%3E%3C/g%3E%3Cg fill='none' stroke='%23b86d55' stroke-opacity='.48' stroke-width='1.2'%3E%3Cpath d='M112 32 q3 -5 6 0 q-3 5 -6 0Z M215 130 q3 -5 6 0 q-3 5 -6 0Z'/%3E%3C/g%3E%3Cg fill='%230d5278' fill-opacity='.2'%3E%3Ccircle cx='108' cy='48' r='1.5'/%3E%3Ccircle cx='224' cy='28' r='1.2'/%3E%3Ccircle cx='26' cy='104' r='1.3'/%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(rgba(13,73,108,0.035) 0.7px, transparent 0.7px);
+      background-size: 250px 190px, 6px 6px;
+
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: 0.15s ease;
+    }
+    a:hover { color: #163a34; text-decoration: underline; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header { padding: 28px 0 18px; }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 14px;
+    }
+
+    .topbar a {
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .topbar a:hover { color: var(--heading); text-decoration: none; }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(230,240,243,0.45), rgba(255,254,249,0.98) 45%);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px;
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .headshot {
+      width: 130px;
+      height: 130px;
+      border-radius: 2px;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      color: var(--heading);
+    }
+
+    .subtitle {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-style: italic;
+    }
+
+    .summary {
+      margin: 0;
+      max-width: 60ch;
+      font-size: 1rem;
+    }
+
+    .hero::after {
+      content: "FIELD NOTES  •  MEDIA / CULTURE / POLITICS";
+      display: block;
+      grid-column: 1 / -1;
+      padding-top: 14px;
+      margin-top: 2px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-actions {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button, .button-secondary {
+      display: inline-block;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #fffef9;
+      border: 1px solid var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .button:hover {
+      background: #163a34;
+      color: white;
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .button-secondary:hover {
+      background: var(--accent-light);
+      text-decoration: none;
+    }
+
+    main { padding: 24px 0 52px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .column {
+      display: grid;
+      gap: 20px;
+      min-width: 0;
+    }
+
+    section {
+      background: rgba(255,254,249,0.94);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 32px;
+      min-width: 0;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul.card-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0;
+    }
+
+    ul.card-list li {
+      border-bottom: 1px solid var(--border);
+    }
+    ul.card-list li:last-child { border-bottom: none; }
+
+    .card-link {
+      display: block;
+      padding: 14px 0;
+    }
+    .card-link:hover { text-decoration: none; }
+    .card-link:hover .card-title { text-decoration: underline; color: #08749a; }
+    .card-link:focus-visible, .topbar a:focus-visible, .button:focus-visible, .button-secondary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .card-title {
+      display: block;
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+      color: var(--heading);
+      margin-bottom: 3px;
+    }
+
+    .card-description {
+      display: block;
+      color: var(--muted);
+      font-size: 0.98rem;
+      font-style: italic;
+    }
+
+    .quick-info {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quick-info div {
+      padding: 0 0 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .quick-info div:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .quick-info strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--heading);
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .quick-info span {
+      font-size: 0.92rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .instagram-video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .instagram-video-card {
+      min-width: 0;
+    }
+
+    .instagram-video-card h3 {
+      margin: 0 0 10px;
+      font-family: 'Oswald', 'Arial Narrow', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--heading);
+    }
+
+    .instagram-video-card iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #e6f0f3;
+    }
+
+    .instagram-video-card > a {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    footer { padding: 0 0 40px; }
+
+    .footer-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-card a { font-weight: 400; }
+
+    @media (max-width: 1000px) {
+      .instagram-video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .headshot { margin: 0 auto; }
+      .hero-actions { justify-content: center; }
+      .layout { grid-template-columns: 1fr; }
+      .topbar { justify-content: center; }
+    }
+
+    @media (max-width: 520px) {
+      .hero, section, .footer-card {
+        padding: 20px 18px;
+      }
+
+      .headshot {
+        width: 110px;
+        height: 110px;
+      }
+
+      .instagram-video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .instagram-video-card iframe {
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a href="#about">About</a>
+        <a href="#writing">Writing</a>
+        <a href="#experience">Performance</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
+      </div>
+
+      <div class="hero">
+        <img src="headshot.jpg" alt="Emilia Bronk headshot" class="headshot" />
+        <div>
+          <h1>Emilia Bronk</h1>
+          <p class="subtitle">University of Pennsylvania &mdash; PPE Major, Environmental Studies Minor</p>
+          <p class="summary">
+            I am a recent Penn grad, researcher, and performer interested in public policy, political communication, media, and entertainment. This site includes my resume, selected academic writing, and performance work.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="resume.pdf" target="_blank">View Resume</a>
+            <a class="button-secondary" href="#writing">Selected Writing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="layout">
+
+        <div class="column">
+          <section id="about">
+            <h2>About</h2>
+            <p>
+              I recently graduated cum laude with distinction from the University of Pennsylvania, where I studied Philosophy, Politics, and Economics and minored in Environmental Studies. My interests include digital journalism, political communication, and the intersection of media, politics, and culture. My honors thesis explored how Democratic Party culture shapes the use of celebrities in political campaigns. I formerly worked as a Social Video intern at Morning Brew, producing news content across platforms, and currently work in congressional communications. Outside of work, I write and perform sketch and stand-up comedy. I was the first female Chair of Mask and Wig in the organization's 138-year history and also performed with Simply Chaos.
+            </p>
+            <p>
+              Looking ahead, I hope to work in the entertainment and political news space, ideally in research, writing, or representation.
+            </p>
+          </section>
+
+          <section>
+            <h2>Areas of Interest</h2>
+            <div class="quick-info">
+              <div>
+                <strong>Policy</strong>
+                <span>Environmental policy, education policy, foreign affairs</span>
+              </div>
+              <div>
+                <strong>Research</strong>
+                <span>Political communication, campaign culture, media analysis</span>
+              </div>
+              <div>
+                <strong>Creative Work</strong>
+                <span>Sketch comedy, satire, performance, writing</span>
+              </div>
+            </div>
+          </section>
+
+          <section id="writing">
+            <h2>Selected Writing</h2>
+            <ul class="card-list">
+              <li>
+                <a class="card-link" href="thesis.pdf" target="_blank">
+                  <span class="card-title">Penn Honors Thesis</span>
+                  <span class="card-description">A PPE honors thesis exploring the democratic tradition of excellence in arts and culture through the Cold War, and its direct impacts on the use of celebrity in the 2024 Presidential Election.</span>
+                </a>
+              </li>
+              <li>
+                <a class="card-link" href="Bronk -- Argument Analysis.pdf" target="_blank">
+                  <span class="card-title">Constitutional Law Voting Rights Jurisprudence</span>
+                  <span class="card-description">Argument analysis focused on voting rights jurisprudence.</span>
+                </a>
+              </li>
+              <li>
+                <a class="card-link" href="URBS 2020 - Final (2).pdf" target="_blank">
+                  <span class="card-title">Philadelphia Heat Vulnerability Index Map</span>
+                  <span class="card-description">Urban studies and mapping project on heat vulnerability in Philadelphia.</span>
+                </a>
+              </li>
+              <li>
+                <a class="card-link" href="mandarin_policy.pdf" target="_blank">
+                  <span class="card-title">Mandarin Language Policy Paper</span>
+                  <span class="card-description">Policy writing on language education and public policy.</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section id="short-film">
+            <h2>Short Film</h2>
+            <ul class="card-list">
+              <li>
+                <a class="card-link" href="https://upenn.app.box.com/s/1oxbkfc8zk8ydzopuh82hrqht5a9jpvd" target="_blank" rel="noopener noreferrer">
+                  <span class="card-title">STANS</span>
+                  <span class="card-description">Written by me.</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="column">
+          <section id="resume">
+            <h2>Resume</h2>
+            <p>Download my current resume below.</p>
+            <a class="button" href="resume.pdf" target="_blank">Download Resume</a>
+          </section>
+
+          <section id="video">
+            <h2>Video &amp; Digital Media</h2>
+            <div class="instagram-video-grid">
+              <div class="instagram-video-card">
+                <h3>Gum Control</h3>
+                <iframe src="https://www.instagram.com/reel/DbWgzAlxUpX/embed/" title="Gum Control" loading="lazy" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                <a href="https://www.instagram.com/reel/DbWgzAlxUpX/" target="_blank" rel="noopener noreferrer">Watch on Instagram</a>
+              </div>
+
+              <div class="instagram-video-card">
+                <h3>Are Stanleys Sustainable</h3>
+                <iframe src="https://www.instagram.com/reel/Dbq5We2hhW4/embed/" title="Are Stanleys Sustainable" loading="lazy" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                <a href="https://www.instagram.com/reel/Dbq5We2hhW4/" target="_blank" rel="noopener noreferrer">Watch on Instagram</a>
+              </div>
+
+              <div class="instagram-video-card">
+                <h3>Work Sketch</h3>
+                <iframe src="https://www.instagram.com/thedsuite/reel/Da3fFWdoqF9/embed/" title="Work Sketch" loading="lazy" allowtransparency="true" allowfullscreen="true" frameborder="0"></iframe>
+                <a href="https://www.instagram.com/thedsuite/reel/Da3fFWdoqF9/" target="_blank" rel="noopener noreferrer">Watch on Instagram</a>
+              </div>
+            </div>
+            <p class="card-description" style="margin-top: 18px;">
+              Video production, editing, and digital storytelling work created for Morning Brew.
+            </p>
+          </section>
+
+          <section id="experience">
+            <h2>Comedy &amp; Performance</h2>
+            <ul class="card-list">
+              <li>
+                <a class="card-link" href="https://emiliabronk.github.io/news/" target="_blank">
+                  <span class="card-title">Satire News Site</span>
+                  <span class="card-description">My own satire news site.</span>
+                </a>
+              </li>
+              <li>
+                <a class="card-link" href="https://youtu.be/mOp9dvY1aw0?si=We88Qaxk7VGcDEag" target="_blank">
+                  <span class="card-title">&ldquo;Bobby&rdquo;</span>
+                  <span class="card-description">Co-written and performed by me.</span>
+                </a>
+              </li>
+              <li>
+                <a class="card-link" href="https://youtu.be/Dw24zTvlLYA?si=As25RsnSQ6Af4_2M" target="_blank">
+                  <span class="card-title">&ldquo;Oops&rdquo;</span>
+                  <span class="card-description">Co-written and performed by me.</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <a href="mailto:emiliabronk@gmail.com">emiliabronk@gmail.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://github.com/emiliabronk" target="_blank">GitHub</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.linkedin.com/in/emilia-bronk" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
