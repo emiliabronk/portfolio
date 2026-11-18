@@ -54,6 +54,9 @@ header{padding:20px 4vw;display:flex;justify-content:space-between;align-items:c
   .hero-strip{width:118%;margin-left:-9%}
   .hero-inner{grid-template-columns:.8fr 1.2fr .7fr}
 }
+.news-project .news-headline{margin-top:8px;font:600 16px/1.28 Georgia,serif}
+.news-project .news-headline-label{display:block;margin-bottom:3px;font:11px/1.3 monospace;text-transform:uppercase;letter-spacing:.03em}
+.comedy .news-project img[data-live-cover]{object-fit:contain;background:var(--black)}
 </style></head><body><a class="skip" href="#main">Skip to portfolio</a><div class="grain" aria-hidden="true"></div><header id="top"><a href="#top">EMILIA BRONK</a><nav aria-label="Main"><a href="#comedy">Writing / Acting / Sketch</a><a href="#video">Social video</a><a href="#writing">Academic writing</a><a href="#about">About / Contact</a></nav></header>
 <main id="main">
 <section class="hero"><div class="name"><h1>Emilia Bronk</h1><p>Video, writing<br>& comedy.</p></div><div class="hero-strip"><div class="hero-inner"><figure class="hero-shot"><img src="gum-control.jpg" alt="Still from Gum Control"></figure><figure class="hero-shot hero-headshot"><img src="reel-headshot.jpg" alt="Emilia Bronk" width="427" height="640"></figure><figure class="hero-shot hero-poster"><img src="stans-poster.jpg" alt="STANS film poster" width="900" height="1200"></figure></div><div class="stamp" aria-hidden="true"><svg viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg"><defs><filter id="stamp-ink" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".19" numOctaves="3" seed="12" result="texture"/><feColorMatrix in="texture" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 8 -3.4" result="ink"/><feComposite in="SourceGraphic" in2="ink" operator="in"/></filter></defs><g fill="currentColor" filter="url(#stamp-ink)"><rect x="6" y="6" width="238" height="108" rx="3" fill="none" stroke="currentColor" stroke-width="5"/><rect x="13" y="13" width="224" height="94" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="125" y="49" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="27" letter-spacing="3">WORK IN</text><text x="125" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="31" letter-spacing="1">PROGRESS</text></g></svg></div></div><div class="hero-bottom"><p>I research, write, shoot, edit, and occasionally get on stage.</p><a href="#comedy">TAKE A LOOK DOWN ↓</a></div></section>
@@ -63,7 +66,12 @@ header{padding:20px 4vw;display:flex;justify-content:space-between;align-items:c
     <h3 id="creative-writing">Writing</h3>
     <div class="comedy-grid">
       <div class="stans-project"><a class="project" href="https://upenn.app.box.com/s/1oxbkfc8zk8ydzopuh82hrqht5a9jpvd"><figure class="film-card"><img src="stans.png" alt="" loading="lazy"></figure><div class="caption"><h3>STANS</h3><span aria-hidden="true">↗</span></div><small>WRITER · SHORT FILM</small></a><a class="script-link" href="STANS.FINAL.pdf">Read the STANS script (PDF) <span aria-hidden="true">↗</span></a></div>
-      <a class="project" href="https://emiliabronk.github.io/news/"><figure class="film-card"><img src="real-newssite.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>This is a Real Newssite</h3><span aria-hidden="true">↗</span></div><small>INDEPENDENT SATIRE WEBSITE</small></a>
+      <a class="project news-project" href="https://emiliabronk.github.io/news/" data-news-feed="https://emiliabronk.github.io/news/latest.json">
+        <figure class="film-card"><img src="real-newssite.jpg" alt="" loading="lazy"></figure>
+        <div class="caption"><h3>This is a Real Newssite</h3><span aria-hidden="true">↗</span></div>
+        <small>INDEPENDENT SATIRE WEBSITE</small>
+        <p class="news-headline" hidden><span class="news-headline-label">Latest story</span><span data-news-headline></span></p>
+      </a>
       <a class="project" href="https://youtu.be/mOp9dvY1aw0"><figure class="film-card"><img src="bobby.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>Bobby</h3><span aria-hidden="true">↗</span></div><small>CO-WRITER & PERFORMER · SKETCH</small></a>
     </div>
   </div>
@@ -112,4 +120,44 @@ function updateFilm() {
 }
 addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(updateFilm); } }, {passive:true});
 updateFilm();
+async function updateNewsProject() {
+ const card = document.querySelector('[data-news-feed]');
+ if (!card) return;
+
+ const feedUrl = new URL(card.dataset.newsFeed);
+ const sitePath = new URL('.', feedUrl).pathname;
+ const newsUrl = (value) => {
+  if (typeof value !== 'string' || !value) return null;
+  const url = new URL(value, feedUrl);
+  return url.origin === feedUrl.origin && url.pathname.startsWith(sitePath) ? url : null;
+ };
+
+ try {
+  const response = await fetch(feedUrl, {cache: 'no-cache'});
+  if (!response.ok) return;
+  const story = await response.json();
+  if (typeof story?.title !== 'string' || !story.title.trim()) return;
+
+  const article = newsUrl(story.url);
+  if (!article) return;
+  card.href = article.href;
+  const headline = card.querySelector('[data-news-headline]');
+  headline.textContent = story.title;
+  headline.parentElement.hidden = false;
+
+  const cover = newsUrl(story.image);
+  if (!cover) return;
+  const preload = new Image();
+  preload.onload = () => {
+   const image = card.querySelector('img');
+   image.src = cover.href;
+   image.alt = typeof story.imageAlt === 'string' ? story.imageAlt : '';
+   image.setAttribute('data-live-cover', '');
+  };
+  preload.src = cover.href;
+ } catch {
+  // The static portfolio card stays usable if the news feed is unavailable.
+ }
+}
+updateNewsProject();
 </script></body></html>
