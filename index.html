@@ -1,198 +1,53 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Emilia Bronk — The Scrapbook</title><link rel="icon" type="image/svg+xml" href="clapperboard.svg"><meta name="description" content="Video, film, comedy and writing by Emilia Bronk."><style>
-:root{--paper:#eee9dc;--black:#20221c;--red:#bf3827;--deep-red:#742d28;--light-paper:#f8f4e9;--orange:#dca66c;--muted:#65665a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--black);font:15px/1.5 Arial,sans-serif}
-a{color:inherit;text-underline-offset:5px}a:focus-visible{outline:3px solid var(--red);outline-offset:7px}
-img{display:block;width:100%;filter:sepia(.12) saturate(1.12) hue-rotate(-8deg) contrast(.94) brightness(1.03)}h1,h2,h3,p,figure{margin:0}h1,h2{font-family:Impact,'Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:.9}h3{font:25px/1.1 Georgia,serif}
-.skip{position:absolute;top:-70px;left:20px;background:var(--paper);padding:10px;z-index:20}.skip:focus{top:10px}
-.grain{position:fixed;inset:-20%;z-index:20;pointer-events:none;opacity:.085;animation:film-grain .24s steps(2) infinite;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath d='M0 0h150v150H0z' fill='%23000' filter='url(%23n)'/%3E%3C/svg%3E")}
-header{padding:20px 4vw;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid #20221c66;font:11px monospace}header>a{text-decoration:none;font-size:13px}nav{display:flex;gap:27px}nav a{text-decoration:none}
-.hero{padding:35px 4vw 75px;position:relative;overflow:hidden}
-.name{display:flex;justify-content:space-between;gap:20px;align-items:end}.name h1{font-size:clamp(70px,11vw,180px);white-space:nowrap}.name p{font:italic 20px Georgia,serif;max-width:15ch;padding-bottom:5px}
-.hero-strip{margin-top:32px;background:var(--black);padding:28px 0;position:relative;transform:translate3d(var(--reel-shift,0px),0,0) rotate(-2deg);width:106%;margin-left:-3%}
-.hero-strip::before,.hero-strip::after,.film-card::before,.film-card::after{content:"";position:absolute;left:0;right:0;height:15px;background:repeating-linear-gradient(90deg,transparent 0 10px,var(--paper) 10px 28px,transparent 28px 45px);background-position-x:var(--feed,0px)}
-.hero-strip::before{top:7px}.hero-strip::after{bottom:7px}
-.hero-inner{height:43vw;max-height:550px;min-height:340px;display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:16px;overflow:hidden}
-.hero-shot{overflow:hidden;position:relative;background:#6a6958}.hero-shot img{height:100%;object-fit:cover}.hero-shot:nth-child(1) img{object-position:center 26%}.hero-shot:nth-child(2) img{object-position:center 30%}.hero-shot:nth-child(3) img{object-position:53% center}
-.hero-shot::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 60px #0005;pointer-events:none}
-.stamp{position:absolute;bottom:6%;left:29%;width:220px;height:auto;color:#ad2d21;transform:rotate(-11deg);z-index:3;mix-blend-mode:multiply}.stamp svg{display:block;width:100%;height:auto;overflow:visible}
-.hero-bottom{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:35px;padding-inline:5px}.hero-bottom p{font:21px/1.3 Georgia,serif;max-width:42ch}.hero-bottom a{font:12px monospace;white-space:nowrap}
-.video{background:var(--paper);color:var(--black);padding:80px 7vw 100px;position:relative;overflow:hidden}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.section-head h2{font-size:clamp(70px,10vw,155px)}.section-head p{font:18px/1.3 Georgia,serif;max-width:27ch}.eyebrow{font:11px monospace;letter-spacing:.08em;margin-bottom:18px}.video-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:35px;align-items:start}.video-grid>a:nth-child(2){margin-top:70px;transform:rotate(2deg)}.video-grid>a:nth-child(1){transform:rotate(-2deg)}.video-grid>a:nth-child(3){margin-top:25px;transform:rotate(-1deg)}
-.project{text-decoration:none;min-width:0;display:block}.film-card{background:var(--black);position:relative;padding:25px 10px;margin-bottom:17px}.film-card::before{top:6px}.film-card::after{bottom:6px}.film-card img{height:370px;object-fit:cover}.caption{display:flex;justify-content:space-between;align-items:start;gap:12px}.caption h3{font-size:26px}.caption span{font-size:21px}.project small{display:block;font:12px/14px monospace;margin-top:6px;letter-spacing:.02em}.project:hover h3{text-decoration:underline}
-.comedy{background:var(--deep-red);color:var(--paper);padding:90px 7vw 100px;position:relative;overflow:hidden}.comedy .section-head{flex-direction:row-reverse;margin-bottom:48px}.comedy .section-head h2{margin-inline-start:auto;text-align:right;font-size:clamp(32px,6.5vw,104px);max-width:15ch;text-wrap:balance}.project-row + .project-row{margin-top:55px;padding-top:32px;border-top:1px solid #eee9dc66}
-.project-row > h3{margin-bottom:24px;font:700 17px/1.3 monospace;letter-spacing:.08em;text-transform:uppercase}
-.comedy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,42px);align-items:start}
-.comedy-grid>:first-child{transform:rotate(-1.5deg)}
-.comedy-grid>:last-child{transform:rotate(1.5deg)}
-.comedy a:focus-visible,.writing a:focus-visible{outline-color:var(--paper)}
-.script-link{display:inline-block;margin-top:12px;font:12px/1.4 monospace}.comedy .film-card img{height:300px;object-fit:cover}.hand{font:italic 26px/1.2 Georgia,serif;color:var(--red);transform:rotate(-7deg);max-width:20ch;margin-left:auto;margin-top:30px}
-.writing{padding:85px 7vw;background:var(--deep-red);color:var(--paper)}.writing-layout{display:grid;grid-template-columns:1.2fr .8fr;grid-template-areas:"papers title";gap:8vw}.writing-title{grid-area:title;text-align:right}.writing-title h2{margin-inline-start:auto}.writing-layout .typed{grid-area:papers}.writing h2{font-size:clamp(65px,9vw,130px);max-width:7ch}.typed{background:var(--light-paper);color:var(--black);padding:45px;box-shadow:6px 7px 0 #20221c16;transform:rotate(1deg);font-family:monospace}.typed-heading{text-align:center;font-size:13px;margin-bottom:25px;padding-bottom:20px;border-bottom:1px solid #20221c44}.paper{display:block;text-decoration:none;padding:22px 0;border-bottom:1px solid #20221c33}.paper:last-child{border-bottom:0}.paper h3{font:19px/1.2 monospace}.paper p{font-size:10px;margin-top:9px;color:var(--muted)}.paper:hover h3{text-decoration:underline}.writing .paper:focus-visible{outline-color:var(--deep-red)}.writing .hand{margin-top:35px;margin-left:0}
-.about{background:var(--paper);color:var(--black);padding:100px 7vw 40px;position:relative;overflow:hidden}.about h2{font-size:clamp(90px,13vw,200px);color:var(--deep-red);margin-bottom:55px}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start}.about-photo{transform:rotate(-4deg);background:var(--light-paper);box-shadow:5px 6px 0 #20221c16;padding:14px 14px 0;width:100%;max-width:370px;position:relative;align-self:start;margin:12px auto 25px}.about-photo img{aspect-ratio:4/5;object-fit:cover;object-position:34% 55%;filter:none;image-rendering:auto}.about-photo figcaption{height:84px;display:flex;align-items:center;justify-content:center;padding:0 12px;transform:rotate(-2deg)}.about-photo .ink-name{width:100%;height:100%;object-fit:contain;aspect-ratio:auto;filter:none}.bio{font:23px/1.5 Georgia,serif}.bio p+p{margin-top:22px}.contacts{display:flex;gap:25px;flex-wrap:wrap;font:12px monospace;margin-top:35px}.end{display:flex;justify-content:flex-end;gap:20px;border-top:1px solid #20221c44;padding-top:25px;margin-top:80px;font:11px monospace}.end a{color:var(--deep-red)}.credits{position:fixed;bottom:17px;right:18px;z-index:21;background:var(--black);border:1px solid #eee4;color:var(--paper);padding:8px 12px;font:9px monospace}.credits span{display:inline-block;width:5px;height:5px;background:var(--red);border-radius:50%;margin-right:8px}
-@media(max-width:800px){.name{display:block}.name h1{font-size:11.5vw}.name p{max-width:none;font-size:18px;margin-top:12px}.hero-inner{min-height:300px}.stamp{width:170px;left:28%}.hero-bottom p{font-size:18px}.hero-bottom a{font-size:10px}.section-head{display:block}.section-head p{margin-top:20px}.film-card img{height:280px}.video-grid{gap:18px}.caption h3{font-size:21px}.comedy .film-card img{height:240px}.writing-layout{gap:35px;grid-template-columns:1fr;grid-template-areas:"title" "papers"}.comedy .section-head p{margin-inline-start:auto;text-align:right}.writing h2{max-width:none;font-size:80px}.typed{max-width:700px}.about-grid{gap:35px}.bio{font-size:19px}}
-@media(max-width:550px){header{padding:18px 6vw}nav{gap:14px;font-size:10px}.hero{padding:27px 6vw 50px}.name h1{font-size:11.5vw;letter-spacing:-.04em}.hero-strip{width:140%;margin-left:-20%;margin-top:30px;transform:translate3d(clamp(-22px,var(--reel-shift,0px),0px),0,0) rotate(-4deg)}.hero-inner{height:370px;grid-template-columns:.7fr 1.25fr .7fr;gap:10px}.hero-shot:first-child img{object-position:60% center}.stamp{left:53%;bottom:7%;width:145px}.hero-bottom{display:block;margin-top:30px}.hero-bottom a{display:inline-block;margin-top:20px}.hero-bottom p{font-size:21px}.video,.comedy,.writing,.about{padding:50px 7vw}.section-head h2{font-size:78px}.section-head{margin-bottom:30px}.section-head p{font-size:18px}.video-grid{grid-template-columns:1fr;gap:36px}.video-grid>a:nth-child(2){margin-top:0;margin-left:8%;margin-right:0}.video-grid>a:nth-child(1){margin-right:8%}.video-grid>a:nth-child(3){margin-top:0;margin-right:8%}.film-card img{height:380px}.caption h3{font-size:25px}.comedy .film-card img{height:250px}.comedy .section-head{margin-bottom:40px}.hand{font-size:22px}.writing h2{font-size:76px}.typed{padding:25px;transform:rotate(1deg)}.paper h3{font-size:17px}.about h2{font-size:95px;margin-bottom:35px}.about-grid{grid-template-columns:1fr}.about-photo{width:76%;max-width:300px;margin:8px auto 28px}.bio{font-size:21px}.end{margin-top:50px;flex-wrap:wrap;font-size:10px}.credits{bottom:10px;right:10px;font-size:8px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-@keyframes film-grain{
-  0%,100%{transform:translate(0,0)}
-  25%{transform:translate(-3%,2%)}
-  50%{transform:translate(2%,-3%)}
-  75%{transform:translate(-2%,-1%)}
-}
-.hero-shot::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(125deg,#f5b45b12,transparent 60%,#e87c4810);mix-blend-mode:screen}
-@media(prefers-reduced-motion:reduce){.grain{animation:none}}
-@media(max-width:550px){header{align-items:flex-start}header>a{white-space:nowrap}nav{justify-content:flex-end;flex-wrap:wrap;gap:6px 14px;max-width:200px}.about-photo figcaption{height:70px;padding-inline:6px}}
-.hero-poster{background:var(--black)}
-.hero-shot.hero-poster img{object-fit:contain;object-position:center;filter:none}
-.video-still{display:grid;place-items:center;height:300px;background-color:#37352e;background-image:linear-gradient(#20221c24,#20221c24),var(--thumbnail);background-position:center;background-size:cover}
-.video-still span{display:grid;place-items:center;width:45px;height:45px;border-radius:50%;background:var(--black);color:var(--paper);font-size:18px}
-@media(max-width:800px){.video-still{height:240px}}
-@media(max-width:550px){.video-still{height:250px}}
-@media(550px < width < 700px){.project small{font-size:clamp(10.25px,1.8vw,12px);letter-spacing:0}}
-.video .section-head h2{font-size:clamp(42px,8vw,126px);text-wrap:balance}
-@media(max-width:650px){.comedy-grid{grid-template-columns:1fr;gap:36px}.comedy-grid>:nth-child(2n){margin-left:8%}.comedy-grid>:nth-child(2n+1){margin-right:8%}.project-row + .project-row{margin-top:42px}}
-.hero-shot.hero-headshot img{position:absolute;top:-10%;height:160%;object-position:center 34%}
-@media(max-width:550px){
-  .hero-strip{width:118%;margin-left:-9%}
-  .hero-inner{grid-template-columns:.8fr 1.2fr .7fr}
-}
-.news-project .news-headline{margin-top:8px;font:600 16px/1.28 Georgia,serif}
-.news-project .news-headline-label{display:block;margin-bottom:3px;font:11px/1.3 monospace;text-transform:uppercase;letter-spacing:.03em}
-.comedy .news-project img[data-live-cover]{object-fit:contain;background:var(--black)}
-
-/* SCRAPBOOK REDESIGN */
-:root{--paper:#f7f0dc;--black:#25221d;--deep-red:#7f3637}
-body{background:repeating-linear-gradient(0deg,transparent 0 85px,#7d9cbd80 86px 88px,transparent 89px 94px),#f7f0dc}
-header{background:#f9f0d9;border-bottom:8px solid #9b8470;position:relative;z-index:5}
-header a{font-weight:800}
-.hero{background:linear-gradient(90deg,transparent 95%,#afaa9b 95%,#afaa9b 97%,#eee4d2 97%)}
-.name h1{font-family:Georgia,serif;font-size:clamp(56px,9vw,140px);letter-spacing:-.08em;text-shadow:3px 3px #b2a28c}
-.hero-strip{background:#26211e;border:12px solid #e9d3a6;box-shadow:13px 17px 0 #5c4b3b4d;transform:rotate(-3deg)}
-.hero-bottom p{background:#fff9e9;padding:22px;transform:rotate(2deg);box-shadow:4px 5px 0 #6f5a4640}
-.comedy{background:radial-gradient(#9b7159 1.3px,transparent 1.7px) 0 0/8px 8px,#bc8967;color:#211b18;border:18px ridge #a77a5d}
-.comedy .section-head h2,.video .section-head h2,.writing h2,.about h2{font-family:Georgia,serif;letter-spacing:-.07em;line-height:1.08;text-shadow:2px 3px #b7a08d}
-.comedy .section-head h2{background:#f9efcf;color:#34261f;padding:24px;transform:rotate(2deg);box-shadow:8px 9px #4c372b}
-.comedy .project-row>h3{display:inline-block;background:#f7e8c8;padding:12px 20px;transform:rotate(-2deg);box-shadow:3px 4px #694f3b}
-.comedy .film-card{background:#e5d2a6;border:14px ridge #8b633d;box-shadow:7px 8px 0 #5e412c80;padding:26px 12px}
-.comedy .film-card:before,.comedy .film-card:after{display:none}
-.comedy .project:nth-child(2n) .film-card{border-color:#286b9c;border-radius:22px}
-.comedy .project:nth-child(3n) .film-card{border-color:#b8ac95}
-.comedy .project{background:#fff4d7;color:#241d18;padding:12px;box-shadow:5px 6px #5b402b66}
-.video{background:repeating-linear-gradient(0deg,#f9f2df 0 82px,#92a8c3 83px 85px,#f9f2df 86px 90px)}
-.video .film-card{border:14px solid #a77c51;box-shadow:9px 10px #73533b70}
-.video .project:nth-child(2) .film-card{border-color:#29769e;border-radius:26px}
-.video .project:nth-child(3) .film-card{border-color:#d5b984}
-.writing{background:#d9c0a0;color:#241f1b;border-top:15px solid #998067}
-.writing .typed{background:#f9f4e6;box-shadow:12px 12px #86745f;transform:rotate(-2deg);border:1px solid #a69a85}
-.writing .paper{border-bottom:1px dashed #6b6153}
-.about{background:radial-gradient(#aa8265 1px,transparent 2px) 0 0/9px 9px,#c99b78}
-.about-grid .bio{background:#faf3df;padding:35px;box-shadow:8px 10px #5c483b55;transform:rotate(1deg)}
-.about-photo{border:16px ridge #92704b;background:#f8f0df;box-shadow:10px 12px #61442c66}
-.end{background:#f8f0df;padding:24px}
-@media(max-width:550px){.comedy{border-width:7px}.comedy .section-head h2{padding:12px}.about-grid .bio{padding:20px}.hero-strip{border-width:5px}}
-</style></head><body><a class="skip" href="#main">Skip to portfolio</a><div class="grain" aria-hidden="true"></div><header id="top"><a href="#top">EMILIA BRONK</a><nav aria-label="Main"><a href="#comedy">Writing / Acting / Sketch</a><a href="#video">Social video</a><a href="#writing">Academic writing</a><a href="#about">About / Contact</a></nav></header>
-<main id="main">
-<section class="hero"><div class="name"><h1>Emilia Bronk</h1><p>Video, writing<br>& comedy.</p></div><div class="hero-strip"><div class="hero-inner"><figure class="hero-shot"><img src="gum-control.jpg" alt="Still from Gum Control"></figure><figure class="hero-shot hero-headshot"><img src="reel-headshot.jpg" alt="Emilia Bronk" width="427" height="640"></figure><figure class="hero-shot hero-poster"><img src="stans-poster.jpg" alt="STANS film poster" width="900" height="1200"></figure></div><div class="stamp" aria-hidden="true"><svg viewBox="0 0 250 120" xmlns="http://www.w3.org/2000/svg"><defs><filter id="stamp-ink" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".19" numOctaves="3" seed="12" result="texture"/><feColorMatrix in="texture" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 8 -3.4" result="ink"/><feComposite in="SourceGraphic" in2="ink" operator="in"/></filter></defs><g fill="currentColor" filter="url(#stamp-ink)"><rect x="6" y="6" width="238" height="108" rx="3" fill="none" stroke="currentColor" stroke-width="5"/><rect x="13" y="13" width="224" height="94" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="125" y="49" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="27" letter-spacing="3">WORK IN</text><text x="125" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="31" letter-spacing="1">PROGRESS</text></g></svg></div></div><div class="hero-bottom"><p>I research, write, shoot, edit, and occasionally get on stage.</p><a href="#comedy">TAKE A LOOK DOWN ↓</a></div></section>
-<section class="comedy" id="comedy">
-  <div class="section-head"><h2>THE GOOD STUFF</h2><p>Things I’ve written, performed, and put out into the world.</p></div>
-  <div class="project-row" role="group" aria-labelledby="creative-writing">
-    <h3 id="creative-writing">Writing</h3>
-    <div class="comedy-grid">
-      <div class="stans-project"><a class="project" href="https://upenn.app.box.com/s/1oxbkfc8zk8ydzopuh82hrqht5a9jpvd"><figure class="film-card"><img src="stans.png" alt="" loading="lazy"></figure><div class="caption"><h3>STANS</h3><span aria-hidden="true">↗</span></div><small>WRITER · SHORT FILM</small></a><a class="script-link" href="STANS.FINAL.pdf">Read the STANS script (PDF) <span aria-hidden="true">↗</span></a></div>
-      <a class="project news-project" href="https://emiliabronk.github.io/news/" data-news-feed="https://emiliabronk.github.io/news/latest.json">
-        <figure class="film-card"><img src="real-newssite.jpg" alt="" loading="lazy"></figure>
-        <div class="caption"><h3>This is a Real Newssite</h3><span aria-hidden="true">↗</span></div>
-        <small>INDEPENDENT SATIRE WEBSITE</small>
-        <p class="news-headline" hidden><span class="news-headline-label">Latest story</span><span data-news-headline></span></p>
-      </a>
-      <a class="project" href="https://youtu.be/mOp9dvY1aw0"><figure class="film-card"><img src="bobby.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>Bobby</h3><span aria-hidden="true">↗</span></div><small>CO-WRITER & PERFORMER · SKETCH</small></a>
-    </div>
-  </div>
-  <div class="project-row" role="group" aria-labelledby="creative-acting">
-    <h3 id="creative-acting">Acting</h3>
-    <div class="comedy-grid">
-      <a class="project" href="https://www.youtube.com/watch?v=1tlcI3evjzw">
-    <figure class="film-card" aria-hidden="true">
-      <div class="video-still" style="--thumbnail:url('https://i.ytimg.com/vi/1tlcI3evjzw/hqdefault.jpg')"><span>▶</span></div>
-    </figure>
-    <div class="caption"><h3>Change of Heart</h3><span aria-hidden="true">↗</span></div>
-    <small>LEAD ACTOR · SHORT FILM</small>
-  </a>
-      <a class="project" href="https://youtu.be/yewmKl834kE">
-    <figure class="film-card" aria-hidden="true">
-      <div class="video-still" style="--thumbnail:url('https://i.ytimg.com/vi/yewmKl834kE/hqdefault.jpg')"><span>▶</span></div>
-    </figure>
-    <div class="caption"><h3>Popcorn Reading</h3><span aria-hidden="true">↗</span></div>
-    <small>WRITER &amp; PERFORMER · SKETCH</small>
-  </a>
-      <a class="project" href="https://youtu.be/Dw24zTvlLYA"><figure class="film-card"><img src="oops.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>Oops</h3><span aria-hidden="true">↗</span></div><small>CO-WRITER & PERFORMER · SKETCH</small></a>
-    </div>
-  </div>
-</section>
-<section class="video" id="video"><div class="section-head"><div><p class="eyebrow"><a href="https://www.instagram.com/morningbrew/" aria-label="Morning Brew on Instagram">MORNING BREW</a></p><h2>SOCIAL VIDEO</h2></div><p>Research to post-production for Morning Brew’s page.</p></div><div class="video-grid"><a class="project" href="https://www.instagram.com/reel/DbWgzAlxUpX/"><figure class="film-card"><img src="gum-control.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>Gum Control</h3><span aria-hidden="true">↗</span></div><small>SOCIAL VIDEO</small></a><a class="project" href="https://www.instagram.com/reel/Dbq5We2hhW4/"><figure class="film-card"><img src="stanleys.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>Are Stanleys Sustainable?</h3><span aria-hidden="true">↗</span></div><small>SOCIAL VIDEO</small></a><a class="project" href="https://www.instagram.com/thedsuite/reel/Da3fFWdoqF9/"><figure class="film-card"><img src="work-sketch.jpg" alt="" loading="lazy"></figure><div class="caption"><h3>Work Sketch</h3><span aria-hidden="true">↗</span></div><small>SOCIAL VIDEO</small></a></div></section>
-<section class="writing" id="writing"><div class="writing-layout"><div class="writing-title"><p class="eyebrow">WRITING & RESEARCH</p><h2>WORDS ON<br>PAPER</h2></div><div class="typed"><p class="typed-heading">SELECTED WRITING<br>by Emilia Bronk</p>
-<a class="paper" href="https://emiliabronk.github.io/portfolio/thesis.pdf"><h3>Celebrity and the 2024 Election ↗</h3><p>PENN PPE HONORS THESIS · PDF</p></a>
-<a class="paper" href="https://emiliabronk.github.io/portfolio/mandarin_policy.pdf"><h3>Mandarin Language Policy ↗</h3><p>EDUCATION & PUBLIC POLICY · PDF</p></a>
-<a class="paper" href="https://emiliabronk.github.io/portfolio/Bronk%20--%20Argument%20Analysis.pdf"><h3>Voting Rights Jurisprudence ↗</h3><p>CONSTITUTIONAL LAW · PDF</p></a>
-<a class="paper" href="https://emiliabronk.github.io/portfolio/URBS%202020%20-%20Final%20%282%29.pdf"><h3>Philadelphia Heat Vulnerability ↗</h3><p>URBAN STUDIES & MAPPING · PDF</p></a>
-</div></div></section>
-<section class="about" id="about"><p class="eyebrow">BEHIND THE WORK</p><h2>OH, HI!</h2><div class="about-grid"><figure class="about-photo"><img src="data:image/webp;base64,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" alt="Emilia Bronk seated in a tiled bathroom, with a towel wrapped around her hair" loading="lazy"><figcaption><img class="ink-name" src="signature.svg" alt="Emilia Bronk"></figcaption></figure><div class="bio"><p>I’m Emilia Bronk. I hail from the greatest state of the Great Lakes, where I picked up most of my vocabulary. I unfortunately now reside in New Jersey, where I hope I’ve picked up nothing.</p><p>I just finished my degree in Philosophy, Politics, and Economics at the University of Pennsylvania. I spent most of my time in Mask and Wig, the oldest formerly all-male musical comedy group without ties to Jeffrey Epstein, and became its first woman chair in 138 years.</p><p>I’ve made social video at Morning Brew and currently work in congressional communications, drafting press releases and remarks. I like 2% milk and shucking corn.</p><div class="contacts"><a href="mailto:emiliabronk@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/emilia-bronk">LinkedIn ↗</a><a href="https://emiliabronk.github.io/portfolio/resume.pdf">Résumé ↗</a></div></div></div><div class="end"><a href="#top">REWIND ↑</a></div></section>
-</main><div class="credits" aria-hidden="true"><span></span><b id="readout">START OF REEL</b></div>
-<script>
-const motion = matchMedia('(prefers-reduced-motion: reduce)');
-const sections = [...document.querySelectorAll('main > section')];
-const labels = ['START OF REEL','WRITING / ACTING / SKETCH','SOCIAL VIDEO','WRITING','END CREDITS'];
-let queued = false;
-function updateFilm() {
- const distance = Math.max(0, window.scrollY);
- const rootStyle = document.documentElement.style;
- rootStyle.setProperty('--feed', motion.matches ? '0px' : `${-(distance * .42 % 45)}px`);
- rootStyle.setProperty('--reel-shift', motion.matches ? '0px' : `${-Math.min(distance * .16, 48)}px`);
- const middle = innerHeight * .45;
- let active = 0;
- sections.forEach((section,index) => { if (section.getBoundingClientRect().top <= middle) active = index; });
- document.querySelector('#readout').textContent = labels[active];
- queued = false;
-}
-addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(updateFilm); } }, {passive:true});
-motion.addEventListener?.('change', updateFilm);
-updateFilm();
-async function updateNewsProject() {
- const card = document.querySelector('[data-news-feed]');
- if (!card) return;
-
- const feedUrl = new URL(card.dataset.newsFeed);
- const sitePath = new URL('.', feedUrl).pathname;
- const newsUrl = (value) => {
-  if (typeof value !== 'string' || !value) return null;
-  const url = new URL(value, feedUrl);
-  return url.origin === feedUrl.origin && url.pathname.startsWith(sitePath) ? url : null;
- };
-
- try {
-  const response = await fetch(feedUrl, {cache: 'no-cache'});
-  if (!response.ok) return;
-  const story = await response.json();
-  if (typeof story?.title !== 'string' || !story.title.trim()) return;
-
-  const article = newsUrl(story.url);
-  if (!article) return;
-  card.href = article.href;
-  const headline = card.querySelector('[data-news-headline]');
-  headline.textContent = story.title;
-  headline.parentElement.hidden = false;
-
-  const cover = newsUrl(story.image);
-  if (!cover) return;
-  const preload = new Image();
-  preload.onload = () => {
-   const image = card.querySelector('img');
-   image.src = cover.href;
-   image.alt = typeof story.imageAlt === 'string' ? story.imageAlt : '';
-   image.setAttribute('data-live-cover', '');
-  };
-  preload.src = cover.href;
- } catch {
-  // The static portfolio card stays usable if the news feed is unavailable.
- }
-}
-updateNewsProject();
-</script></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emilia Bronk — collected works</title><meta name="description" content="The collected films, writing, videos and assorted things of Emilia Bronk.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Special+Elite&family=Playfair+Display:wght@500;700;900&family=Caveat:wght@500;700&display=swap');
+:root{--ink:#24211e;--cream:#f7f0db;--blue:#7192af;--rust:#b34b3e}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#f4eddc;font-family:'Special Elite',Georgia,serif}a{color:inherit}img{max-width:100%;display:block}button{font:inherit}::selection{background:#e4c367}.skip{position:absolute;top:-80px;left:10px;z-index:100;background:white;padding:12px}.skip:focus{top:10px}
+.page{overflow:hidden;position:relative;background:repeating-linear-gradient(0deg,transparent 0 78px,#7896b56b 79px 81px,transparent 82px 87px),linear-gradient(90deg,#fff9e8,#f3ead5 95%,#ddd4c1 96%,#d5c8b4 97%,#faf2df 98%);border-left:7px solid #e2d8c5;border-right:16px solid #d1c8b6}
+.page:after{content:"";pointer-events:none;position:absolute;inset:0;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.48' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.19'/%3E%3C/svg%3E")}
+.top{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 5%;background:#f9f2dfeb;border-bottom:2px solid #c1b29c}.top>a{text-decoration:none;font:700 17px 'Playfair Display',serif}.top nav{display:flex;gap:20px;flex-wrap:wrap}.top nav a{font:11px 'DM Mono',monospace;text-transform:uppercase;text-decoration:none}.top nav a:hover{text-decoration:underline}
+.hero{max-width:1400px;margin:auto;min-height:850px;position:relative;padding:75px 5% 90px}.hero h1{position:relative;z-index:3;font:900 clamp(64px,11vw,170px)/.88 'Playfair Display',serif;letter-spacing:-.075em;margin:0;max-width:850px;transform:rotate(-3deg);text-shadow:4px 5px #d9bca1}.hero .sub{position:relative;z-index:4;font:clamp(24px,3vw,41px) 'Caveat',cursive;transform:rotate(-3deg);margin:25px 0 0 12%}.hero .sub span{background:#f9eaa9;padding:2px 13px;box-shadow:4px 4px #a29a83}
+.object{position:absolute;z-index:2}.photo{padding:13px 13px 42px;background:#f9f4e8;box-shadow:5px 9px 15px #39281d5c;transform:rotate(var(--rot,-3deg));transition:transform .25s}.photo:hover{transform:rotate(0deg) translateY(-8px);z-index:7}.photo img{width:100%;height:100%;object-fit:cover}.photo:after{content:attr(data-note);position:absolute;bottom:8px;left:10px;right:10px;text-align:center;font:22px 'Caveat',cursive}
+.hero-photo{right:7%;top:150px;width:26%;height:405px;--rot:7deg}.hero-photo img{object-position:center 28%}
+.hero-ticket{left:9%;bottom:85px;transform:rotate(-8deg);background:#e9bb78;border:2px dashed #8d523e;padding:26px 40px;box-shadow:4px 6px #69544255;font:15px 'DM Mono',monospace}.hero-ticket strong{display:block;font:800 43px 'Playfair Display',serif}
+.hero-note{right:20%;bottom:70px;transform:rotate(8deg);padding:30px 32px;background:#f9f0d4;box-shadow:6px 6px #927c6555;font:30px/1.1 'Caveat',cursive}.hero-note:before,.taped:before{content:"";position:absolute;top:-12px;left:36%;width:88px;height:29px;background:#e9ddbaae;transform:rotate(-5deg);box-shadow:0 1px 2px #5553}
+.doodle{position:absolute;font:65px 'Caveat',cursive;color:#b03e37;transform:rotate(-14deg)}.hero .doodle{top:390px;left:15%}
+.ransom{display:flex;justify-content:center;flex-wrap:wrap;gap:2px 5px;margin:0 auto 40px;max-width:1100px;line-height:1.2}.ransom span{display:inline-block;padding:2px 8px;background:var(--cream);font:900 clamp(27px,5vw,67px) 'Playfair Display',serif;box-shadow:1px 2px #4e40334d;transform:rotate(var(--r));color:var(--c)}.ransom span:nth-child(3n){font-family:Georgia,serif;background:#e8d3a5}.ransom span:nth-child(4n){font-family:'Special Elite',serif;background:#d3dce1}.ransom span:nth-child(5n){background:#e9b1a6}
+.cork-section{position:relative;padding:100px 5% 130px;border:24px ridge #b58b67;background-color:#b98155;background-image:url("https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=1600&q=85"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.12' numOctaves='5' seed='8'/%3E%3CfeColorMatrix type='saturate' values='.42'/%3E%3C/filter%3E%3Crect width='190' height='190' filter='url(%23c)' opacity='.65'/%3E%3C/svg%3E");background-blend-mode:multiply,overlay;background-size:cover,220px;box-shadow:inset 0 0 60px #5a342b80}.cork-section:before{content:"";position:absolute;inset:8px;border:2px solid #d8ad81;pointer-events:none}
+.board{max-width:1280px;margin:auto;display:grid;grid-template-columns:repeat(12,1fr);gap:42px 28px;align-items:start;position:relative}.piece{position:relative;min-width:0;transform:rotate(var(--rot,0deg));transition:transform .2s}.piece:hover{transform:rotate(0deg) translateY(-7px);z-index:5}.piece a{text-decoration:none;display:block}.piece .meta{display:block;margin-top:12px;background:#f5ebd1;padding:9px 12px;font:11px/1.5 'DM Mono',monospace;box-shadow:3px 4px #392b2355}.piece .meta b{display:block;font:700 21px 'Playfair Display',serif}.piece img{width:100%;height:100%;object-fit:cover}.pin:before{content:"";position:absolute;z-index:5;width:16px;height:16px;left:50%;top:-6px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff9,#c23b36 40%,#671b17 90%);box-shadow:2px 4px 3px #2118}
+.frame{height:300px;overflow:hidden;background:#eee3ce;padding:15px;box-shadow:4px 8px 12px #2a1a1480}.gold{border:18px ridge #a87836;outline:3px solid #6d4728;outline-offset:-11px;background:#ad7b37}.gold img{border:7px solid #513a24}.blue{border:19px ridge #19709a;border-radius:23px;outline:5px solid #8dc0d5;outline-offset:-13px}.wood{border:21px ridge #8b633f;outline:4px solid #d3b085;outline-offset:-14px}.paper-frame{border:13px solid #f4e9d0;box-shadow:7px 9px #56413166}.film{border:24px solid #211e1c;position:relative}.film:before,.film:after{content:"";position:absolute;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,#f5e8d4 0 14px,transparent 14px 33px);z-index:2}.film:before{top:-18px}.film:after{bottom:-18px}
+.span4{grid-column:span 4}.span5{grid-column:span 5}.span6{grid-column:span 6}.span7{grid-column:span 7}.offset{margin-top:65px}.mini-note{background:#f9e6b7;padding:25px;box-shadow:4px 5px #3a29235c;font:29px/1.1 'Caveat',cursive}.sticker{display:inline-block;background:#f2ede3;color:#b32f32;padding:16px;border-radius:50%;font:900 27px 'Playfair Display',serif;transform:rotate(11deg);box-shadow:2px 4px #37261b66}
+.section-intro{position:relative;z-index:2;max-width:900px;margin:0 auto 55px;text-align:center;font:26px/1.2 'Caveat',cursive;color:#fff6e9;text-shadow:1px 2px #4b322b}
+.paper-section{position:relative;padding:105px 5% 140px;background:repeating-linear-gradient(0deg,transparent 0 64px,#92a9bd80 65px 67px,transparent 68px 72px),#f5efdf}.paper-section .board{align-items:center}.paper-sheet{min-height:310px;background:#faf7ed;padding:35px 30px;box-shadow:6px 9px #6b61573d;border:1px solid #c9bda9}.paper-sheet h3{font:700 30px/1.1 'Playfair Display',serif;margin:0 0 15px}.paper-sheet p{font:15px/1.6 'Special Elite',serif}.paper-sheet a{display:inline-block;margin-top:15px;text-decoration:underline;font:12px 'DM Mono',monospace}.paper-sheet:before{content:"";position:absolute;top:-14px;left:37%;width:95px;height:31px;background:#d8c9a9b5;transform:rotate(-4deg)}
+.about{padding:110px 5% 130px;background:#e6d9c3;position:relative}.about-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:40% 1fr;gap:8%;align-items:center}.about .photo{height:490px;transform:rotate(-6deg)}.about .photo img{object-position:center 25%}.about-text{background:#f8f0dc;padding:45px;box-shadow:9px 11px #84766060;transform:rotate(2deg)}.about-text h2{font:900 65px 'Playfair Display',serif;margin:0 0 25px}.about-text p{font:19px/1.65 Georgia,serif}.about-text a{font:12px 'DM Mono',monospace}.footer{padding:45px 5%;background:#293b48;color:#fff3dc;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:12px 'DM Mono',monospace}
+@media(max-width:800px){.hero{min-height:730px}.hero h1{font-size:clamp(62px,12vw,105px)}.hero-photo{width:38%;height:330px;top:260px}.hero-ticket{left:6%;bottom:70px}.hero-note{right:10%;bottom:10px}.board{gap:35px 20px}.span4,.span5,.span6,.span7{grid-column:span 6}.frame{height:250px}.about-inner{gap:5%}.about-text{padding:25px}.about-text h2{font-size:48px}}
+@media(max-width:550px){.top{align-items:flex-start;flex-direction:column}.top nav{gap:12px}.top nav a{font-size:10px}.hero{min-height:760px;padding-top:55px}.hero h1{font-size:70px}.hero .sub{margin-left:3%;font-size:26px}.hero-photo{width:60%;height:330px;top:250px;right:8%}.hero-ticket{left:4%;bottom:80px;padding:15px;transform:rotate(-10deg);font-size:10px}.hero-ticket strong{font-size:27px}.hero-note{right:3%;bottom:10px;font-size:23px;padding:17px}.hero .doodle{top:205px;left:10%}.cork-section{padding:75px 6% 90px;border-width:12px}.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 13px}.span4,.span5,.span6,.span7{grid-column:span 2}.board .piece:nth-child(3n){grid-column:span 1}.board .piece:nth-child(3n) .frame{height:190px}.frame{height:290px}.offset{margin-top:0}.piece .meta b{font-size:18px}.paper-section{padding:70px 6%}.paper-sheet{min-height:0}.about-inner{display:block}.about .photo{width:75%;height:390px;margin:0 auto 45px}.about-text h2{font-size:48px}.about-text p{font-size:17px}.ransom span{font-size:33px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.piece,.photo{transition:none}}
+</style></head><body><a class="skip" href="#work">Skip to work</a><div class="page">
+<header class="top"><a href="#home">EMILIA BRONK ✳</a><nav><a href="#work">Film & comedy</a><a href="#social">Social video</a><a href="#papers">Writing</a><a href="#about">Oh, hi</a></nav></header>
+<main><section class="hero" id="home"><h1>Emilia<br>Bronk.</h1><p class="sub"><span>a collection of things I've made</span></p><div class="doodle">↘</div><figure class="object photo hero-photo" data-note="oh, hi!"><img src="reel-headshot.jpg" alt="Emilia Bronk"></figure><div class="object hero-ticket"><small>ADMIT ONE / ALL ACCESS</small><strong>WORK IN<br>PROGRESS</strong><small>WRITING • VIDEO • COMEDY</small></div><div class="object hero-note taped">somewhere between<br>serious & ridiculous ♡</div></section>
+<section class="cork-section" id="work"><h2 class="ransom" aria-label="Written, acted, assorted"><span style="--r:-5deg;--c:#a83a33">W</span><span style="--r:3deg;--c:#2c5978">R</span><span style="--r:-2deg;--c:#24211e">I</span><span style="--r:6deg;--c:#a83a33">T</span><span style="--r:-4deg;--c:#253f55">T</span><span style="--r:2deg;--c:#24211e">E</span><span style="--r:-6deg;--c:#b83b30">N</span><span style="--r:4deg;--c:#24211e">&</span><span style="--r:-3deg;--c:#245a78">M</span><span style="--r:5deg;--c:#a83a33">A</span><span style="--r:-2deg;--c:#24211e">D</span><span style="--r:3deg;--c:#245a78">E</span></h2><p class="section-intro">A little bit of writing, a little bit of performing, a lot of committing to the bit.</p><div class="board">
+<article class="piece span5 pin" style="--rot:-4deg"><a href="https://upenn.app.box.com/s/1oxbkfc8zk8ydzopuh82hrqht5a9jpvd"><div class="frame gold"><img src="stans.png" alt="STANS film"></div><span class="meta"><b>STANS</b>WRITER · SHORT FILM ↗</span></a><a href="STANS.FINAL.pdf" class="meta">READ THE SCRIPT (PDF) ↗</a></article>
+<article class="piece span4 offset pin" style="--rot:5deg"><a href="https://emiliabronk.github.io/news/"><div class="frame blue"><img src="real-newssite.jpg" alt="This is a Real Newssite"></div><span class="meta"><b>This is a Real Newssite</b>SATIRE WEBSITE ↗</span></a></article>
+<div class="piece span3 offset" style="--rot:-7deg"><div class="mini-note">i promise some of this is serious. some.</div><div style="margin:40px 0 0 35px" class="sticker">ASK<br>ME!</div></div>
+<article class="piece span4 pin" style="--rot:5deg"><a href="https://youtu.be/mOp9dvY1aw0"><div class="frame wood"><img src="bobby.jpg" alt="Bobby sketch"></div><span class="meta"><b>Bobby</b>CO-WRITER & PERFORMER ↗</span></a></article>
+<article class="piece span4 offset pin" style="--rot:-5deg"><a href="https://youtu.be/Dw24zTvlLYA"><div class="frame gold"><img src="oops.jpg" alt="Oops sketch"></div><span class="meta"><b>Oops</b>CO-WRITER & PERFORMER ↗</span></a></article>
+<article class="piece span4 pin" style="--rot:4deg"><a href="https://www.youtube.com/watch?v=1tlcI3evjzw"><div class="frame paper-frame film"><img src="https://i.ytimg.com/vi/1tlcI3evjzw/hqdefault.jpg" alt="Change of Heart film still"></div><span class="meta"><b>Change of Heart</b>LEAD ACTOR · SHORT FILM ↗</span></a></article>
+<article class="piece span5 pin" style="--rot:-3deg"><a href="https://youtu.be/yewmKl834kE"><div class="frame blue"><img src="https://i.ytimg.com/vi/yewmKl834kE/hqdefault.jpg" alt="Popcorn Reading"></div><span class="meta"><b>Popcorn Reading</b>WRITER & PERFORMER ↗</span></a></article>
+<div class="piece span3 offset" style="--rot:8deg"><div class="mini-note">“everything not forbidden is compulsory”</div></div>
+<div class="piece span4 offset" style="--rot:-3deg"><div class="frame wood"><img src="stans-poster.jpg" alt="STANS film poster"></div></div>
+</div></section>
+<section class="paper-section" id="social"><h2 class="ransom" aria-label="Social video"><span style="--r:-5deg;--c:#a83a33">S</span><span style="--r:3deg;--c:#2c5978">O</span><span style="--r:-2deg;--c:#24211e">C</span><span style="--r:6deg;--c:#a83a33">I</span><span style="--r:-4deg;--c:#253f55">A</span><span style="--r:2deg;--c:#24211e">L</span><span style="--r:0deg;--c:#24211e">&nbsp;</span><span style="--r:-6deg;--c:#b83b30">V</span><span style="--r:4deg;--c:#24211e">I</span><span style="--r:-3deg;--c:#245a78">D</span><span style="--r:5deg;--c:#a83a33">E</span><span style="--r:-2deg;--c:#24211e">O</span></h2><p style="text-align:center;font:27px 'Caveat',cursive;margin-bottom:60px">From the first research rabbit hole to the final edit. Morning Brew.</p><div class="board">
+<article class="piece span4" style="--rot:-5deg"><a href="https://www.instagram.com/reel/DbWgzAlxUpX/"><div class="frame film"><img src="gum-control.jpg" alt="Gum Control"></div><span class="meta"><b>Gum Control</b>RESEARCH · PRODUCTION · VIDEO ↗</span></a></article>
+<article class="piece span4 offset" style="--rot:5deg"><a href="https://www.instagram.com/reel/Dbq5We2hhW4/"><div class="frame blue"><img src="stanleys.jpg" alt="Are Stanleys Sustainable?"></div><span class="meta"><b>Are Stanleys Sustainable?</b>SOCIAL VIDEO ↗</span></a></article>
+<article class="piece span4" style="--rot:-3deg"><a href="https://www.instagram.com/thedsuite/reel/Da3fFWdoqF9/"><div class="frame gold"><img src="work-sketch.jpg" alt="Work Sketch"></div><span class="meta"><b>Work Sketch</b>SOCIAL VIDEO ↗</span></a></article>
+</div></section>
+<section class="cork-section" id="papers"><h2 class="ransom" aria-label="Words on paper"><span style="--r:-3deg;--c:#a83a33">W</span><span style="--r:4deg;--c:#2c5978">O</span><span style="--r:-5deg;--c:#24211e">R</span><span style="--r:5deg;--c:#a83a33">D</span><span style="--r:-3deg;--c:#253f55">S</span><span style="--r:2deg;--c:#24211e">&nbsp;</span><span style="--r:-4deg;--c:#b83b30">O</span><span style="--r:3deg;--c:#24211e">N</span><span style="--r:2deg;--c:#245a78">&nbsp;</span><span style="--r:5deg;--c:#a83a33">P</span><span style="--r:-2deg;--c:#24211e">A</span><span style="--r:4deg;--c:#245a78">P</span><span style="--r:-3deg;--c:#a83a33">E</span><span style="--r:2deg;--c:#24211e">R</span></h2><div class="board">
+<article class="piece span6 paper-sheet" style="--rot:-3deg"><h3>Celebrity and the 2024 Election</h3><p>University of Pennsylvania · PPE honors thesis</p><a href="thesis.pdf">OPEN PAPER ↗</a></article>
+<article class="piece span6 paper-sheet offset" style="--rot:4deg"><h3>Mandarin Language Policy</h3><p>Language, education and policy research</p><a href="mandarin_policy.pdf">OPEN PAPER ↗</a></article>
+<article class="piece span6 paper-sheet" style="--rot:3deg"><h3>Voting Rights Jurisprudence</h3><p>Constitutional law · Argument analysis</p><a href="Bronk%20--%20Argument%20Analysis.pdf">OPEN PAPER ↗</a></article>
+<article class="piece span6 paper-sheet offset" style="--rot:-4deg"><h3>Philadelphia Heat Vulnerability</h3><p>Urban studies and mapping</p><a href="URBS%202020%20-%20Final%20%282%29.pdf">OPEN PAPER ↗</a></article>
+</div></section>
+<section class="about" id="about"><div class="about-inner"><figure class="photo" data-note="nice to meet you!"><img src="reel-headshot.jpg" alt="Portrait of Emilia Bronk"></figure><div class="about-text"><h2>Oh, hi.</h2><p>I'm Emilia Bronk. I research, write, shoot, edit, and occasionally get on stage. I studied Philosophy, Politics, and Economics at the University of Pennsylvania, but spent a fair amount of time making comedy, too.</p><p>These are some things I've made, helped make, or thought were worth pinning to the wall.</p><p><a href="mailto:emiliabronk@gmail.com">SAY HELLO ↗</a></p></div></div></section></main>
+<footer class="footer"><span>© 2026 EMILIA BRONK</span><span>COLLECTED, NOT CURATED.</span><a href="#home">BACK TO TOP ↑</a></footer></div></body></html>
