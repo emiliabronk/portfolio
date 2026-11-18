@@ -24,6 +24,47 @@
 @media(max-width:800px){.hero{min-height:730px}.hero h1{font-size:clamp(62px,12vw,105px)}.hero-photo{width:38%;height:330px;top:260px}.hero-ticket{left:6%;bottom:70px}.hero-note{right:10%;bottom:10px}.board{gap:35px 20px}.span4,.span5,.span6,.span7{grid-column:span 6}.frame{height:250px}.about-inner{gap:5%}.about-text{padding:25px}.about-text h2{font-size:48px}}
 @media(max-width:550px){.top{align-items:flex-start;flex-direction:column}.top nav{gap:12px}.top nav a{font-size:10px}.hero{min-height:760px;padding-top:55px}.hero h1{font-size:70px}.hero .sub{margin-left:3%;font-size:26px}.hero-photo{width:60%;height:330px;top:250px;right:8%}.hero-ticket{left:4%;bottom:80px;padding:15px;transform:rotate(-10deg);font-size:10px}.hero-ticket strong{font-size:27px}.hero-note{right:3%;bottom:10px;font-size:23px;padding:17px}.hero .doodle{top:205px;left:10%}.cork-section{padding:75px 6% 90px;border-width:12px}.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 13px}.span4,.span5,.span6,.span7{grid-column:span 2}.board .piece:nth-child(3n){grid-column:span 1}.board .piece:nth-child(3n) .frame{height:190px}.frame{height:290px}.offset{margin-top:0}.piece .meta b{font-size:18px}.paper-section{padding:70px 6%}.paper-sheet{min-height:0}.about-inner{display:block}.about .photo{width:75%;height:390px;margin:0 auto 45px}.about-text h2{font-size:48px}.about-text p{font-size:17px}.ransom span{font-size:33px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.piece,.photo{transition:none}}
+
+/* MATERIAL STUDY — individual surfaces, not uniform decorative cards */
+.cork-section{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22360%22%20height%3D%22360%22%3E%3Cfilter%20id%3D%22a%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.63%22%20numOctaves%3D%225%22%20seed%3D%2219%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%22.55%200%200%200%20.27%200%20.35%200%200%20.14%200%200%20.17%200%20.065%200%200%200%201%200%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22360%22%20height%3D%22360%22%20fill%3D%22%23c28e61%22%2F%3E%3Crect%20width%3D%22360%22%20height%3D%22360%22%20filter%3D%22url(%23a)%22%20opacity%3D%22.62%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2368452f%22%20opacity%3D%22.22%22%3E%3Cpath%20d%3D%22M12%2015l21%207m40%2012l18-11m90%2010l31%205m48%2038l18-8M33%20101l23%208m75-8l24%2012m93%2022l17-10M22%20215l32-6m86%2015l28%208m87%2023l32-12M60%20306l26-9m130%2020l22%2011%22%20stroke-width%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:360px 360px;background-blend-mode:normal;border:0;border-top:22px solid #b68b65;border-bottom:24px solid #a87854;box-shadow:inset 0 13px 15px #4b2d1d70,inset 0 -13px 16px #4b2d1d70}
+.cork-section:before{inset:14px;border:0}
+.page{background:repeating-linear-gradient(0deg,transparent 0 78px,#7896b54b 79px 81px,transparent 82px 87px),linear-gradient(90deg,#fff9e8,#f3ead5 95%,#ddd4c1 96%,#d5c8b4 97%,#faf2df 98%)}
+.photo{background:#f7f2e6;border:1px solid #c4b69f;box-shadow:2px 3px 2px #35271c25,7px 12px 18px #39281d50}
+.photo:before{content:"";position:absolute;z-index:3;top:-14px;left:35%;width:94px;height:29px;transform:rotate(-7deg);background:repeating-linear-gradient(90deg,#e7d5a98c 0 3px,#f7e9c4b8 3px 6px);clip-path:polygon(0 8%,100% 0,98% 100%,2% 91%);box-shadow:0 2px 3px #4433}
+.hero-photo{border:10px solid #c4a37e;border-radius:48% 45% 42% 40% / 8% 10% 9% 12%;padding:16px 16px 50px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Crect%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22%23c3a47b%22%2F%3E%3Cpath%20d%3D%22M0%203h12M0%209h12%22%20stroke%3D%22%23eed7ad%22%20stroke-width%3D%222%22%20opacity%3D%22.5%22%2F%3E%3Cpath%20d%3D%22M3%200v12M9%200v12%22%20stroke%3D%22%2368482f%22%20stroke-width%3D%222%22%20opacity%3D%22.34%22%2F%3E%3C%2Fsvg%3E");box-shadow:inset 0 0 0 5px #8d6846,8px 12px 16px #3a2a206b}
+.hero-photo img{border:7px solid #eee0c5}
+.hero-photo:before{display:none}
+.hero h1{letter-spacing:-.08em;text-shadow:2px 3px #e5cbb0}
+.hero-note{border:1px solid #d1c5ac;box-shadow:2px 3px 0 #a39277,7px 11px 15px #443c2c33}
+.hero-ticket{background:#e8c59a;background-image:repeating-linear-gradient(0deg,#6e554b12 0 1px,transparent 1px 4px);border:1px solid #9b654e;clip-path:polygon(0 0,98% 0,100% 12%,98% 24%,100% 37%,98% 50%,100% 63%,98% 76%,100% 89%,98% 100%,0 100%,2% 88%,0 75%,2% 62%,0 50%,2% 37%,0 24%,2% 12%)}
+.frame{position:relative;isolation:isolate;box-shadow:inset 0 0 0 2px #fff8,4px 7px 2px #2a1a1444,9px 13px 16px #2a1a1470}
+.frame img{filter:contrast(.96) saturate(.88)}
+.gold{border:0;padding:27px;background:linear-gradient(135deg,#6d421c 0%,#f0d69b 7%,#b27c37 12%,#6f461d 18%,#d9ad60 25%,#8c5825 35%,#f1d99c 48%,#946024 63%,#e4bb76 78%,#6c431c 100%);border-radius:9px}
+.gold:after{content:"";position:absolute;inset:12px;border:4px ridge #e4bc78;pointer-events:none;box-shadow:inset 0 0 8px #271307}
+.gold img{height:100%;border:6px solid #4b2c17}
+.wood{border:0;padding:24px;background:repeating-linear-gradient(96deg,#714829 0 4px,#946440 5px 8px,#c39462 9px 11px,#805332 12px 16px);border-radius:30px 14px 24px 12px;box-shadow:inset 0 0 0 8px #754b2f,inset 0 0 0 14px #b98d61,7px 12px 14px #24140f80}
+.wood img{border:8px solid #593921;border-radius:4px}
+.blue{border:0;padding:28px;border-radius:25px;background:radial-gradient(circle at 12px 12px,#b3e0ed 0 5px,#246b9c 6px 11px,#0e3e6c 12px 14px,transparent 15px) 0 0/28px 28px,#176195;box-shadow:inset 0 0 0 7px #0b4774,7px 10px 12px #281d1880}
+.blue img{border:6px solid #d4e6e8}
+.paper-frame{background:#f2ead9;border:12px solid #ded2bc;box-shadow:inset 0 0 0 3px #fff9,6px 10px 15px #2d1c176b}
+.piece .meta{background:#f6efdb;border:1px solid #b9a68d;box-shadow:3px 5px 0 #392b233d;position:relative}
+.piece:nth-child(2n) .meta{background:#e5e0d2}
+.piece:nth-child(5n) .meta{background:#e4d1b3}
+.piece:nth-child(3n) .meta{transform:rotate(-2deg)}
+.piece:nth-child(4n) .meta{transform:rotate(2deg)}
+.pin:before{top:-9px;width:19px;height:19px;box-shadow:2px 4px 2px #2118,0 0 0 1px #7c241d}
+.paper-sheet{background:linear-gradient(105deg,#e9dfcc 0%,#fffaf0 7%,#f7f0df 100%);border:1px solid #c4b8a2;box-shadow:2px 4px 0 #57452f1c,9px 12px 15px #241b1457}
+.paper-sheet:before{background:repeating-linear-gradient(90deg,#e4d8b6a8 0 4px,#f3e6c5a8 4px 8px);clip-path:polygon(2% 6%,99% 0,97% 100%,0 94%)}
+.paper-sheet:nth-child(2){background:#e8d8bb}
+.paper-sheet:nth-child(3){background:#e9e6db}
+.paper-sheet:nth-child(4){background:#f7e6d7}
+.ransom span{border-radius:1px;box-shadow:1px 2px 0 #31231d55,3px 5px 7px #31231d30}
+.ransom span:nth-child(7n){font-style:italic;text-transform:lowercase}
+.ransom span:nth-child(6n){font-family:'DM Mono',monospace}
+.about{background:linear-gradient(90deg,#e0d2b8,#e8dbc7)}
+.about .photo{border:17px solid #b58a5d;border-radius:8px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Crect%20width%3D%2212%22%20height%3D%2212%22%20fill%3D%22%23c3a47b%22%2F%3E%3Cpath%20d%3D%22M0%203h12M0%209h12%22%20stroke%3D%22%23eed7ad%22%20stroke-width%3D%222%22%20opacity%3D%22.5%22%2F%3E%3Cpath%20d%3D%22M3%200v12M9%200v12%22%20stroke%3D%22%2368482f%22%20stroke-width%3D%222%22%20opacity%3D%22.34%22%2F%3E%3C%2Fsvg%3E");padding:13px 13px 42px;box-shadow:inset 0 0 0 5px #6e492f,8px 12px 14px #3a2a2060}
+.about-text{background:#f9f2e2;border:1px solid #bdb098;box-shadow:3px 4px 0 #a5947a,10px 13px 16px #84766060}
+@media(max-width:550px){.hero-photo{padding:8px 8px 40px;border-width:7px}.gold{padding:18px}.wood{padding:17px}.blue{padding:18px}.cork-section{border-top-width:12px;border-bottom-width:14px}}
 </style></head><body><a class="skip" href="#work">Skip to work</a><div class="page">
 <header class="top"><a href="#home">EMILIA BRONK ✳</a><nav><a href="#work">Film & comedy</a><a href="#social">Social video</a><a href="#papers">Writing</a><a href="#about">Oh, hi</a></nav></header>
 <main><section class="hero" id="home"><h1>Emilia<br>Bronk.</h1><p class="sub"><span>a collection of things I've made</span></p><div class="doodle">↘</div><figure class="object photo hero-photo" data-note="oh, hi!"><img src="reel-headshot.jpg" alt="Emilia Bronk"></figure><div class="object hero-ticket"><small>ADMIT ONE / ALL ACCESS</small><strong>WORK IN<br>PROGRESS</strong><small>WRITING • VIDEO • COMEDY</small></div><div class="object hero-note taped">somewhere between<br>serious & ridiculous ♡</div></section>
