@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Emilia Bronk</title>
 <meta content="Video, film, comedy and writing by Emilia Bronk." name="description"/><link href="assets/ace-spades-icon.webp" rel="icon" type="image/webp"/>
@@ -40,8 +43,8 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 /* Stop the generated eight-ball asset's disconnected top strip from rendering. */
 .hero-eight .object-image{clip-path:inset(7.5% 0 0)}
 .hero-decors{position:absolute;inset:0;pointer-events:none;z-index:5}.hero-decors>div{position:absolute}
-.hero-eight{width:95px;right:1%;bottom:11%;transform:rotate(-10deg)}
-.hero-button{width:92px;left:-7%;top:55%;transform:rotate(-11deg)}
+.hero-eight{width:79px;right:2%;top:4%;bottom:auto;transform:rotate(-10deg)}
+.hero-button{width:95px;left:auto;right:2%;top:57%;transform:rotate(-10deg);z-index:12}
 .hero-snl{width:270px;left:-28%;bottom:3%;transform:rotate(-6deg)}
 /* Portfolio work: large enough to actually inspect the work. */
 .scrap-section{position:relative;padding:65px clamp(24px,4.3vw,66px) 105px;max-width:1360px;margin:0 auto}
@@ -51,7 +54,7 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 .heading-ohhi-art{clip-path:inset(17% 0 0)}
 .creative .section-heading{max-width:1000px}.social .section-heading{max-width:800px}.academic .section-heading{max-width:910px}.about .section-heading{max-width:365px}
 .section-blurb{position:relative;max-width:550px;margin:0 auto 62px;padding:28px 37px 25px;z-index:2;text-align:center;background:url('assets/card-blank.webp') center/100% 100% no-repeat;font:18px/1.45 Georgia,serif}
-.work-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(48px,6.5vw,100px);row-gap:72px;align-items:start;max-width:1180px;margin:auto}
+.work-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(20px,2.5vw,36px);row-gap:62px;align-items:start;max-width:1310px;margin:auto}
 .work{position:relative;min-width:0;display:flex;flex-direction:column;align-items:center;transform:rotate(var(--tilt));transition:transform .2s}
 .work:hover{transform:rotate(0deg) translateY(-5px);z-index:8}
 .work-stans{--tilt:-2.8deg}.work-trn{--tilt:2.6deg}.work-bobby{--tilt:-2deg}.work-change{--tilt:2deg}.work-popcorn{--tilt:-2.5deg}.work-oops{--tilt:2.5deg}
@@ -66,15 +69,15 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 .deco-penn{width:164px;transform:rotate(-5deg)}.deco-button{width:78px;transform:rotate(8deg)}.deco-ny{width:80px;transform:rotate(-7deg)}.decor-row-low{margin-top:-4px}
 /* All actual buttons (historical and personal) are the pinback object itself: no extra pushpin. */
 .archive-button{display:block;flex:0 0 auto;width:clamp(85px,8vw,110px);height:clamp(85px,8vw,110px);text-decoration:none;transform:rotate(var(--pin-turn,0deg));filter:drop-shadow(3px 5px 3px #3425176b);transition:transform .2s;position:relative}
-.archive-button:hover,.archive-button:focus-visible{transform:rotate(0deg) scale(1.07);z-index:8}
+.archive-button{cursor:default}
 .archive-button img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:50%;clip-path:circle(49.5% at 50% 50%)}
 .archive-kennedy{--pin-turn:-7deg}.archive-sds{--pin-turn:7deg}.archive-vvaw{--pin-turn:5deg}.archive-sos{--pin-turn:-6deg}
 /* Editorial grid: not tiny film stills */
-.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:52px 66px;max-width:1000px;margin:55px auto 30px;align-items:start}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,46px);max-width:1240px;margin:55px auto 30px;align-items:start}
 .video-work{text-decoration:none;display:block;min-width:0;transform:rotate(var(--tilt));transition:transform .2s}
-.video-work:nth-child(1){--tilt:-3deg}.video-work:nth-child(2){--tilt:3deg}.video-work:nth-child(3){--tilt:-2deg;grid-column:1/-1;width:min(64%,460px);margin:0 auto}
+.video-work:nth-child(1){--tilt:-3deg}.video-work:nth-child(2){--tilt:3deg}.video-work:nth-child(3){--tilt:-2deg;grid-column:auto;width:100%;margin:0}
 .video-work:hover{transform:rotate(0deg) translateY(-5px)}
-.video-work .framed{max-width:445px;margin:0 auto}.video-work:nth-child(3) .framed{width:72%;max-width:325px}
+.video-work .framed{max-width:445px;margin:0 auto}.video-work:nth-child(3) .framed{width:75%;max-width:325px}
 .video-label{min-height:132px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;margin-top:13px;padding:27px 36px;background:url('assets/card-blank.webp') center/100% 100% no-repeat}
 .video-label strong{font:700 clamp(20px,2vw,27px)/1.2 'Libre Baskerville',Georgia,serif}.video-label small{margin-top:8px;font:12px 'DM Mono',monospace}
 /* Writing & bio: actual paper image behind text, pins on paper only. */
@@ -91,9 +94,15 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 .footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:13px 20px;margin-top:8px;padding:24px clamp(22px,5vw,65px);background:#f7eedbed;font:11px/1.6 'DM Mono',monospace}
 .artifact-credits{flex-basis:100%;font-size:10px;opacity:.7}
 @media(max-width:1050px){
- .hero{min-height:665px;padding:38px 42px 56px}.hero-art{height:560px}.hero-snl{left:-28%;width:230px}.hero-button{left:-7%;top:58%;width:75px}.hero-eight{width:75px;right:4%}
- .work-grid{column-gap:40px;row-gap:64px}.work .frame-link,.work .label-wrap{max-width:400px}.work-label{padding:23px 29px;min-height:128px}
- .video-grid{gap:46px 42px}.paper-grid{gap:45px 40px}.bio{padding:47px 46px 54px;font-size:16px}
+ .hero{min-height:665px;padding:38px 42px 56px}.hero-art{height:560px}.hero-snl{left:-28%;width:230px}.hero-button{left:auto;right:3%;top:57%;width:80px}.hero-eight{width:72px;right:2%;top:4%;bottom:auto}
+ .work-grid{column-gap:24px;row-gap:55px}.work .frame-link,.work .label-wrap{max-width:400px}.work-label{padding:23px 29px;min-height:128px}
+ .video-grid{gap:28px}.paper-grid{gap:45px 40px}.bio{padding:47px 46px 54px;font-size:16px}
+}
+
+@media(min-width:761px) and (max-width:1023px){
+ .work-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px;max-width:850px}
+ .video-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}
+ .video-work:nth-child(3){grid-column:1/-1;max-width:390px;width:62%;margin:0 auto}
 }
 @media(max-width:760px){
  .site-header{flex-wrap:wrap;padding:19px 22px;gap:10px}.site-header nav{gap:8px 17px}.site-header nav a{font-size:10px}
@@ -101,7 +110,7 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
  .tagline{margin:2px 0 0 4%;padding:17px 23px;font-size:16px}
  .intro{width:55%;max-width:355px;margin:28px 0 0 3%;padding:36px 25px 38px;font-size:16px;line-height:1.34}
  .hero-art{position:absolute;right:3%;top:295px;width:58%;height:490px}.hero-portrait{left:1%;right:1%;top:20px}.hero-portrait .framed.frame-cream{width:83%}
- .hero-snl{left:-58%;bottom:12px;width:190px}.hero-button{left:-14%;top:61%;width:63px}.hero-eight{right:6%;bottom:13%;width:57px}
+ .hero-snl{left:-58%;bottom:12px;width:190px}.hero-button{left:auto;right:3%;top:62%;width:70px}.hero-eight{right:2%;top:4%;bottom:auto;width:57px}
  .scrap-section{padding:55px 24px 80px}.section-heading{margin-bottom:16px}.section-blurb{max-width:92%;margin-bottom:48px;padding:22px 29px;font-size:16px}
  .work-grid{grid-template-columns:1fr;max-width:525px;row-gap:50px}
  .work{width:92%;margin:0 auto}.work .frame-link,.work .label-wrap{max-width:475px}.work-bobby .frame-link{width:72%}
@@ -114,12 +123,12 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 @media(max-width:480px){
  .hero{min-height:795px;padding:32px 16px 35px}.logo{width:100%}.tagline{font-size:15px;padding:17px 20px}.intro{width:61%;margin-top:27px;padding:35px 24px 39px;font-size:15px}
  .hero-art{top:280px;right:1%;width:55%;height:465px}.hero-portrait{top:20px}.hero-portrait .framed.frame-cream{width:89%}
- .hero-snl{left:-62%;bottom:23px;width:158px}.hero-button{left:-12%;top:58%;width:54px}.hero-eight{right:6%;bottom:14%;width:51px}
+ .hero-snl{left:-62%;bottom:23px;width:158px}.hero-button{left:auto;right:3%;top:61%;width:60px}.hero-eight{right:4%;top:4%;bottom:auto;width:51px}
  .work{width:95%}.work-label{padding:24px 30px;min-height:123px}.work-label strong{font-size:22px}.work-label span{font-size:11px}
  .decor-row{gap:14px}.deco-penn{width:93px}.deco-button,.deco-ny{width:54px}.archive-button{width:69px;height:69px}
  .paper-link{padding:35px 36px;min-height:210px}.paper-link strong{font-size:21px}.bio{padding:44px 41px 49px;font-size:15px}
 }
-@media(max-width:355px){.hero{min-height:760px}.intro{width:64%;font-size:14px;padding:33px 22px}.hero-art{width:53%;top:290px}.hero-snl{left:-68%;width:135px}.hero-button{left:-13%;width:48px}.hero-eight{width:46px}.section-blurb{padding:22px 25px}.work-label{padding:21px 26px}.paper-link{padding:34px 31px}.bio{padding:42px 35px}}
+@media(max-width:355px){.hero{min-height:760px}.intro{width:64%;font-size:14px;padding:33px 22px}.hero-art{width:53%;top:290px}.hero-snl{left:-68%;width:135px}.hero-button{left:auto;right:3%;width:53px}.hero-eight{width:46px}.section-blurb{padding:22px 25px}.work-label{padding:21px 26px}.paper-link{padding:34px 31px}.bio{padding:42px 35px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.work,.video-work,.paper-link,.archive-button{transition:none}}
 </style></head><body><a class="skip" href="#creative">Skip to work</a><div class="site">
 <header class="site-header"><a class="brand" href="#top">Emilia Bronk</a><nav aria-label="Main navigation"><a href="#creative">Writing / Acting / Sketch</a><a href="#social">Social video</a><a href="#academic">Academic writing</a><a href="#about">About / Contact</a></nav></header><main>
@@ -140,10 +149,10 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 <div class="label-wrap"><img alt="" class="label-pin" src="assets/pin-brass.webp"/><a class="work-label" href="https://youtu.be/mOp9dvY1aw0" rel="noopener" target="_blank"><strong>Bobby</strong><span>CO-WRITER &amp; PERFORMER · SKETCH</span></a></div>
 </article>
 <div aria-label="Vintage political buttons and personal ephemera" class="decor-row decor-row-center">
-<a class="archive-button archive-kennedy" href="https://commons.wikimedia.org/wiki/File:John_F._Kennedy_1960_Campaign_Button_(background_removed).png" rel="noopener noreferrer" target="_blank" title="View archival source"><img alt="Actual 1960 John F. Kennedy presidential campaign button, Cornell University collection" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/59/John_F._Kennedy_1960_Campaign_Button_%28background_removed%29.png"/></a>
+<span class="archive-button archive-kennedy"><img alt="Actual 1960 John F. Kennedy presidential campaign button, Cornell University collection" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/59/John_F._Kennedy_1960_Campaign_Button_%28background_removed%29.png"/></span>
 <div aria-hidden="true" class="deco deco-penn"><span class="object-attach"><img alt="" class="object-image" src="assets/pennant.webp"/><img alt="" class="attachment brass" src="assets/pin-brass.webp"/></span></div>
 <div aria-hidden="true" class="deco deco-button"><span class="object-attach"><img alt="" class="object-image" src="assets/button-ask.webp"/></span></div>
-<a class="archive-button archive-sds" href="https://commons.wikimedia.org/wiki/File:Free_University_SDS.jpg" rel="noopener noreferrer" target="_blank" title="View archival source"><img alt="Actual circa-1965 Students for a Democratic Society Free University button" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/8/85/Free_University_SDS.jpg"/></a>
+<span class="archive-button archive-sds"><img alt="Actual circa-1965 Students for a Democratic Society Free University button" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/8/85/Free_University_SDS.jpg"/></span>
 </div>
 <article class="work work-change">
 <a class="frame-link" href="https://www.youtube.com/watch?v=1tlcI3evjzw" rel="noopener" target="_blank"><span class="framed frame-wicker" data-frame="wicker"><span class="image-window"><img alt="Change of Heart still" class="focus-change" loading="lazy" src="https://i.ytimg.com/vi/1tlcI3evjzw/hqdefault.jpg"/></span><img alt="" class="physical-frame" src="assets/frame-wicker.webp"/></span></a>
@@ -158,9 +167,9 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 <div class="label-wrap"><img alt="" class="label-pin" src="assets/pin-brass.webp"/><a class="work-label" href="https://youtu.be/Dw24zTvlLYA" rel="noopener" target="_blank"><strong>Oops</strong><span>CO-WRITER &amp; PERFORMER · SKETCH</span></a></div>
 </article>
 <div aria-label="Historic antiwar buttons and personal ephemera" class="decor-row decor-row-low">
-<a class="archive-button archive-vvaw" href="https://commons.wikimedia.org/wiki/File:VVAW_Button.jpg" rel="noopener noreferrer" target="_blank" title="View archival source"><img alt="Actual Vietnam Veterans Against the War button, circa 1972" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/70/VVAW_Button.jpg"/></a>
+<span class="archive-button archive-vvaw"><img alt="Actual Vietnam Veterans Against the War button, circa 1972" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/70/VVAW_Button.jpg"/></span>
 <div aria-hidden="true" class="deco deco-ny"><span class="object-attach"><img alt="" class="object-image" src="assets/button-la.webp"/></span></div>
-<a class="archive-button archive-sos" href="https://commons.wikimedia.org/wiki/File:SOS_(Stop_Our_Ships)_Anti-Vietnam_War_Button.jpg" rel="noopener noreferrer" target="_blank" title="View archival source"><img alt="Actual 1972 Stop Our Ships anti–Vietnam War button" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/65/SOS_%28Stop_Our_Ships%29_Anti-Vietnam_War_Button.jpg"/></a>
+<span class="archive-button archive-sos"><img alt="Actual 1972 Stop Our Ships anti–Vietnam War button" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/65/SOS_%28Stop_Our_Ships%29_Anti-Vietnam_War_Button.jpg"/></span>
 </div></div></section>
 <section class="scrap-section social" id="social"><h2 class="section-heading"><img alt="Social video" src="assets/heading-social.webp"/></h2><p class="section-blurb">Research to post-production for Morning Brew’s page.</p><div class="video-grid"><a class="video-work" href="https://www.instagram.com/reel/DbWgzAlxUpX/" rel="noopener" target="_blank"><span class="framed frame-gold" data-frame="gold"><span class="image-window"><img alt="Gum Control" loading="lazy" src="gum-control.jpg"/></span><img alt="" class="physical-frame" src="assets/frame-gold.webp"/></span><span class="video-label"><strong>Gum Control</strong><small>SOCIAL VIDEO</small></span></a>
 <a class="video-work" href="https://www.instagram.com/reel/Dbq5We2hhW4/" rel="noopener" target="_blank"><span class="framed frame-blue" data-frame="blue"><span class="image-window"><img alt="Are Stanleys Sustainable?" loading="lazy" src="stanleys.jpg"/></span><img alt="" class="physical-frame" src="assets/frame-blue.webp"/></span><span class="video-label"><strong>Are Stanleys Sustainable?</strong><small>SOCIAL VIDEO</small></span></a>
@@ -171,4 +180,4 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 <a class="paper-link" href="URBS%202020%20-%20Final%20%282%29.pdf"><img alt="" class="paper-pin" src="assets/pin-red.webp"/><strong>Philadelphia Heat Vulnerability</strong><span>URBAN STUDIES &amp; MAPPING · PDF</span><em>Read paper ↗</em></a></div></section>
 <section class="scrap-section about" id="about"><h2 class="section-heading"><img alt="Oh, hi." class="heading-ohhi-art" src="assets/heading-oh-hi.webp"/></h2><div class="about-layout"><figure class="me-photo"><span class="framed frame-wicker" data-frame="wicker"><span class="image-window"><img alt="Emilia Bronk seated in a tiled bathroom" loading="lazy" src="assets/about-polaroid.webp"/></span><img alt="" class="physical-frame" src="assets/frame-wicker.webp"/></span></figure>
 <div class="bio"><p>I’m Emilia Bronk. I hail from the greatest state of the Great Lakes, where I picked up most of my vocabulary. I unfortunately now reside in New Jersey, where I hope I’ve picked up nothing.</p><p>I just finished my degree in Philosophy, Politics, and Economics at the University of Pennsylvania. I spent most of my time in Mask and Wig, the oldest formerly all-male musical comedy group without ties to Jeffrey Epstein, and became its first woman chair in 138 years.</p><p>I’ve made social video at Morning Brew and currently work in congressional communications, drafting press releases and remarks. I like 2% milk and shucking corn.</p><div class="links"><a href="mailto:emiliabronk@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/emilia-bronk">LinkedIn ↗</a><a href="resume.pdf">Résumé ↗</a></div></div></div></section>
-</main><footer class="footer"><span>© 2026 Emilia Bronk</span><a href="#top">REWIND ↑</a><div aria-label="Archival button image credits" class="artifact-credits"><span>Historic button photographs: </span><a href="https://commons.wikimedia.org/wiki/File:John_F._Kennedy_1960_Campaign_Button_(background_removed).png" rel="noopener" target="_blank">Cornell University via Wikimedia Commons (JFK)</a>; <a href="https://commons.wikimedia.org/wiki/File:Free_University_SDS.jpg" rel="noopener" target="_blank">Wikimedia Commons (SDS)</a>; <a href="https://commons.wikimedia.org/wiki/File:VVAW_Button.jpg" rel="noopener" target="_blank">Wikimedia Commons (VVAW)</a>; <a href="https://commons.wikimedia.org/wiki/File:SOS_(Stop_Our_Ships)_Anti-Vietnam_War_Button.jpg" rel="noopener" target="_blank">Wikimedia Commons (SOS)</a>.</div></footer></div></body></html>
+</main><footer class="footer"><span>© 2026 Emilia Bronk</span><a href="#top">REWIND ↑</a><div aria-label="Archival button image credits" class="artifact-credits">Historical button photographs: Cornell University (JFK), Wikimedia Commons (SDS, Vietnam Veterans Against the War, Stop Our Ships).</div></footer></div></body></html>
