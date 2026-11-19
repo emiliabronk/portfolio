@@ -1,4 +1,6 @@
+<!doctype html>
 <!DOCTYPE html>
+
 <!DOCTYPE html>
 
 <!DOCTYPE html>
@@ -93,6 +95,17 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 .bio p+p{margin-top:16px}.bio .links{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:22px;font:12px/1.5 'DM Mono',monospace}
 .footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:13px 20px;margin-top:8px;padding:24px clamp(22px,5vw,65px);background:#f7eedbed;font:11px/1.6 'DM Mono',monospace}
 .artifact-credits{flex-basis:100%;font-size:10px;opacity:.7}
+
+/* About: a single pinned Polaroid with the original signed ink artwork */
+.me-photo.polaroid-photo{width:min(100%,390px);max-width:390px;margin:0 auto;transform:rotate(-3deg);filter:none;position:relative}
+.polaroid-card{display:block;position:relative;isolation:isolate;padding:clamp(12px,1.7vw,16px) clamp(12px,1.7vw,16px) clamp(78px,8.5vw,92px);background:#f5eee1;border:1px solid #d6c7b3;box-shadow:inset 0 1px #fffcf5,0 4px 3px #503d3029,8px 12px 15px #34251d54}
+.polaroid-photo-window{display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:#d1c4b6}
+.polaroid-photo-window img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:none}
+.polaroid-card:before{content:"";position:absolute;z-index:3;top:-13px;left:calc(50% - 13px);width:26px;height:31px;background:url('assets/pin-brass.webp') center/contain no-repeat;pointer-events:none}
+.polaroid-signature-art{position:absolute;z-index:2;left:14%;width:72%;height:clamp(55px,7.1vw,80px);bottom:4px;object-fit:contain;transform:rotate(-2deg);pointer-events:none}
+@media(max-width:760px){.me-photo.polaroid-photo{width:min(78%,365px)}.polaroid-card{padding:13px 13px 78px}.polaroid-signature-art{height:65px}}
+@media(max-width:480px){.me-photo.polaroid-photo{width:min(77%,320px)}.polaroid-card{padding:11px 11px 68px}.polaroid-signature-art{height:58px;bottom:0}}
+
 @media(max-width:1050px){
  .hero{min-height:665px;padding:38px 42px 56px}.hero-art{height:560px}.hero-snl{left:-28%;width:230px}.hero-button{left:auto;right:3%;top:57%;width:80px}.hero-eight{width:72px;right:2%;top:4%;bottom:auto}
  .work-grid{column-gap:24px;row-gap:55px}.work .frame-link,.work .label-wrap{max-width:400px}.work-label{padding:23px 29px;min-height:128px}
@@ -178,6 +191,6 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 <a class="paper-link" href="mandarin_policy.pdf"><img alt="" class="paper-pin" src="assets/pin-red.webp"/><strong>Mandarin Language Policy</strong><span>EDUCATION &amp; PUBLIC POLICY · PDF</span><em>Read paper ↗</em></a>
 <a class="paper-link" href="Bronk%20--%20Argument%20Analysis.pdf"><img alt="" class="paper-pin" src="assets/pin-red.webp"/><strong>Voting Rights Jurisprudence</strong><span>CONSTITUTIONAL LAW · PDF</span><em>Read paper ↗</em></a>
 <a class="paper-link" href="URBS%202020%20-%20Final%20%282%29.pdf"><img alt="" class="paper-pin" src="assets/pin-red.webp"/><strong>Philadelphia Heat Vulnerability</strong><span>URBAN STUDIES &amp; MAPPING · PDF</span><em>Read paper ↗</em></a></div></section>
-<section class="scrap-section about" id="about"><h2 class="section-heading"><img alt="Oh, hi." class="heading-ohhi-art" src="assets/heading-oh-hi.webp"/></h2><div class="about-layout"><figure class="me-photo"><span class="framed frame-wicker" data-frame="wicker"><span class="image-window"><img alt="Emilia Bronk seated in a tiled bathroom" loading="lazy" src="assets/about-polaroid.webp"/></span><img alt="" class="physical-frame" src="assets/frame-wicker.webp"/></span></figure>
+<section class="scrap-section about" id="about"><h2 class="section-heading"><img alt="Oh, hi." class="heading-ohhi-art" src="assets/heading-oh-hi.webp"/></h2><div class="about-layout"><figure class="me-photo polaroid-photo"><span class="polaroid-card"><span class="polaroid-photo-window"><img alt="Emilia Bronk" decoding="async" loading="lazy" src="headshot.jpg"/></span><img alt="Emilia Bronk, handwritten in Sharpie" class="polaroid-signature-art" loading="lazy" src="signature.svg"/></span></figure>
 <div class="bio"><p>I’m Emilia Bronk. I hail from the greatest state of the Great Lakes, where I picked up most of my vocabulary. I unfortunately now reside in New Jersey, where I hope I’ve picked up nothing.</p><p>I just finished my degree in Philosophy, Politics, and Economics at the University of Pennsylvania. I spent most of my time in Mask and Wig, the oldest formerly all-male musical comedy group without ties to Jeffrey Epstein, and became its first woman chair in 138 years.</p><p>I’ve made social video at Morning Brew and currently work in congressional communications, drafting press releases and remarks. I like 2% milk and shucking corn.</p><div class="links"><a href="mailto:emiliabronk@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/emilia-bronk">LinkedIn ↗</a><a href="resume.pdf">Résumé ↗</a></div></div></div></section>
 </main><footer class="footer"><span>© 2026 Emilia Bronk</span><a href="#top">REWIND ↑</a><div aria-label="Archival button image credits" class="artifact-credits">Historical button photographs: Cornell University (JFK), Wikimedia Commons (SDS, Vietnam Veterans Against the War, Stop Our Ships).</div></footer></div></body></html>
