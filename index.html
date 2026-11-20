@@ -192,4 +192,33 @@ a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #264
 <a class="paper-link" href="URBS%202020%20-%20Final%20%282%29.pdf"><img alt="" class="paper-pin" src="assets/pin-red.webp"/><strong>Philadelphia Heat Vulnerability</strong><span>URBAN STUDIES &amp; MAPPING · PDF</span><em>Read paper ↗</em></a></div><div class="decor-row decor-row-between"><div class="deco deco-ny"><span class="object-attach"><img alt="" class="object-image" src="assets/button-art.webp"/></span></div><div class="deco deco-button"><span class="object-attach"><img alt="" class="object-image" src="assets/charm-fish.webp"/></span></div></div></section>
 <section class="scrap-section about" id="about"><h2 class="section-heading"><img alt="Oh, hi." class="heading-ohhi-art" src="assets/heading-oh-hi.webp"/></h2><div class="about-layout"><figure class="me-photo polaroid-photo"><span class="polaroid-card"><span class="polaroid-photo-window"><img alt="Emilia Bronk seated in a bathroom" decoding="async" loading="lazy" src="assets/about-polaroid.webp"/></span><img alt="Emilia Bronk, handwritten in Sharpie" class="polaroid-signature-art" loading="lazy" src="signature.svg"/></span></figure>
 <div class="bio"><p>I’m Emilia Bronk. I hail from the greatest state of the Great Lakes, where I picked up most of my vocabulary. I unfortunately now reside in New Jersey, where I hope I’ve picked up nothing.</p><p>I just finished my degree in Philosophy, Politics, and Economics at the University of Pennsylvania. I spent most of my time in Mask and Wig, the oldest formerly all-male musical comedy group without ties to Jeffrey Epstein, and became its first woman chair in 138 years.</p><p>I’ve made social video at Morning Brew and currently work in congressional communications, drafting press releases and remarks. I like 2% milk and shucking corn.</p><div class="links"><a href="mailto:emiliabronk@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/emilia-bronk">LinkedIn ↗</a><a href="resume.pdf">Résumé ↗</a></div></div></div></section>
-<script>(async function(){const img=document.getElementById("trn-live-cover");if(!img)return;try{const r=await fetch("https://api.github.com/repos/emiliabronk/news/contents/_posts?per_page=100",{cache:"no-store"});if(!r.ok)return;const files=(await r.json()).filter(x=>/\.md$/.test(x.name)).sort((a,b)=>b.name.localeCompare(a.name));for(const file of files.slice(0,8)){const t=await fetch(file.download_url,{cache:"no-store"}).then(r=>r.text());const m=t.match(/^cover:\s*[\x22\x27]?([^\r\n\x22\x27]+)/m);if(m){const path=m[1].trim();img.src=path.startsWith("http")?path:"https://emiliabronk.github.io/news/"+path.replace(/^\//,"");break}}}catch(e){}})();</script></main><footer class="footer"><span>© 2026 Emilia Bronk</span><a href="#top">REWIND ↑</a><div aria-label="Archival button image credits" class="artifact-credits">Historical button photographs: Cornell University (JFK), Wikimedia Commons (SDS, Vietnam Veterans Against the War, Stop Our Ships).</div></footer></div></body></html>
+<script>
+(async function(){
+ const img=document.getElementById('trn-live-cover');
+ if(!img)return;
+ const card=img.closest('a.frame-link');
+ const fallback='https://emiliabronk.github.io/news/assets/penn-station-babies.jpg';
+ img.src=fallback;
+ img.alt='Latest TRN satire article: Congratulations! 667 Babies Born at New York Penn Station!';
+ img.onerror=function(){if(this.src!==fallback)this.src=fallback};
+ if(card)card.href='https://emiliabronk.github.io/news/2026/11/19/penn-station-babies/';
+ try{
+  const response=await fetch('https://api.github.com/repos/emiliabronk/news/contents/_posts?per_page=100',{cache:'no-store'});
+  if(!response.ok)return;
+  const posts=(await response.json()).filter(p=>/^\d{4}-\d{2}-\d{2}-.*\.md$/.test(p.name)).sort((a,b)=>b.name.localeCompare(a.name));
+  for(const post of posts.slice(0,12)){
+   const source=await fetch(post.download_url,{cache:'no-store'}).then(r=>r.ok?r.text():'');
+   const match=source.match(/^cover:\s*["']?([^\r\n"']+)/m);
+   if(!match)continue;
+   const cover=match[1].trim();
+   img.src=cover.startsWith('http')?cover:'https://emiliabronk.github.io/news/'+cover.replace(/^\//,'');
+   const title=source.match(/^title:\s*["']?([^\r\n"']+)/m);
+   img.alt='Latest TRN article'+(title?': '+title[1]:'');
+   const slug=post.name.replace(/^\d{4}-\d{2}-\d{2}-/,'').replace(/\.md$/,'');
+   const date=post.name.slice(0,10).replace(/-/g,'/');
+   if(card)card.href='https://emiliabronk.github.io/news/'+date+'/'+slug+'/';
+   break;
+  }
+ }catch(e){/* Keep the latest known cover visible offline or when rate-limited. */}
+})();
+</script></main><footer class="footer"><span>© 2026 Emilia Bronk</span><a href="#top">REWIND ↑</a><div aria-label="Archival button image credits" class="artifact-credits">Historical button photographs: Cornell University (JFK), Wikimedia Commons (SDS, Vietnam Veterans Against the War, Stop Our Ships).</div></footer></div></body></html>
